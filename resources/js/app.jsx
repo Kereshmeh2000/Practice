@@ -1,8 +1,12 @@
 import "../css/app.css";
-import Routes from "@/routes.jsx";
 import React from "react";
 import { createRoot } from "react-dom/client";
 import "./bootstrap.jsx";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
+import {Toaster} from 'react-hot-toast'
+import {BrowserRouter} from "react-router-dom";
+import Routes from "./routes";
 // import axios from "axios";
 
 if (document.getElementById("app")) {
@@ -13,10 +17,15 @@ if (document.getElementById("app")) {
     // if (token) {
     //     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     // }
-
+ 
     Index.render(
         <React.StrictMode>
-            <div>hello</div>
+            <Provider store={store}>
+                <BrowserRouter>
+                    <Toaster />
+                    <Routes />
+                </BrowserRouter>
+            </Provider>
         </React.StrictMode>
     );
 }
