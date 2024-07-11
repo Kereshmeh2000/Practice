@@ -9,7 +9,7 @@ export default function useLoginHandler() {
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
-        e.preventDefult;
+        e.preventDefault;
 
         const userInfo = {email , password};
         dispatch(userLogin(userInfo));

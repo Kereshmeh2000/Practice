@@ -1,9 +1,11 @@
 import React from "react";
 import useLoginHandler from "../../custom-hooks/useloginhandler";
+import useUserRedirect from "../../custom-hooks/useUserRedirect";
 
 export default function LoginForm() {
 
     const {email, password, handleSubmit, handleEmail, handlePassword} = useLoginHandler();
+    useUserRedirect();
 
     return (
         <>

@@ -2,8 +2,15 @@ import { createSlice } from '@reduxjs/toolkit'
 import { userLogin, userLogout, userRegister } from './userThunk'
 import {toast} from 'react-hot-toast'
 
+interface UserState {
+  user: any;
+  isAuthenticated: boolean;
+  loading: boolean;
+  error: string | null;
+}
 
-const initialState = {
+
+const initialState: UserState = {
   user: null,
   isAuthenticated: false,
   loading: false,
@@ -43,7 +50,7 @@ export const userSlice = createSlice({
     .addCase(userLogin.rejected, (state, action) => {
       state.loading = false,
       toast.dismiss(),
-      toast.error(action.payload)
+      toast.error(action.payload as string)
     })
 
     //USER REGISTER
@@ -70,7 +77,7 @@ export const userSlice = createSlice({
     .addCase(userRegister.rejected, (state, action) => {
       state.loading = false,
       toast.dismiss(),
-      toast.error(action.payload)
+      toast.error(action.payload as string)
     })
 
     //USER LOGOUT
@@ -97,7 +104,7 @@ export const userSlice = createSlice({
     .addCase(userLogout.rejected, (state, action) => {
       state.loading = false,
       toast.dismiss(),
-      toast.error(action.payload)
+      toast.error(action.payload as string)
     })
   }
 })

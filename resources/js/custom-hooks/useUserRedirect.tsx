@@ -11,7 +11,7 @@ export default function useUserRedirect() {
             if(isAuthenticated) {
                 navigate('/profile')
             }
-        }, [isAuthenticated])
+        }, [isAuthenticated, navigate])
         
         return {
             isAuthenticated
