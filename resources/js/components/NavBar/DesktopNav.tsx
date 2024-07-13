@@ -8,7 +8,7 @@ import { HeaderNotifs, HeaderProfile } from '../../constract';
 
 export default function DesktopNav() {
     return (
-        <nav className="hidden md:flex items-center justify-around bg-pink-500 text-white px-10 font-bolder">
+        <nav className="hidden lg:flex items-center justify-around bg-pink-500 text-white px-10 font-bolder">
 
             {/* LOGO */}
             <div className='text-white text-4xl flex py-4'>LOGO</div>
