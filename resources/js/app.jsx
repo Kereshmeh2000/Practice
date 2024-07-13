@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import {Toaster} from 'react-hot-toast'
 import {BrowserRouter} from "react-router-dom";
-import Routes from "./routes";
+import AppRoutes from "./AppRoutes.tsx";
 // import axios from "axios";
 
 if (document.getElementById("app")) {
@@ -23,7 +23,7 @@ if (document.getElementById("app")) {
             <Provider store={store}>
                 <BrowserRouter>
                     <Toaster />
-                    <Routes />
+                    <AppRoutes />
                 </BrowserRouter>
             </Provider>
         </React.StrictMode>

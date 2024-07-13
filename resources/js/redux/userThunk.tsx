@@ -4,12 +4,12 @@ import { customFetch } from "../utils/axios";
 //User Login
 export const userLogin = createAsyncThunk (
     'user/login',
-    async(userInfo, thunkAPI) => {
+    async(userInfo: {email: string, password: string}, thunkAPI) => {
         try{
             const response = await customFetch.post ('login', userInfo);
             return response.data
         }
-        catch (error){
+        catch (error: any){
             return thunkAPI.rejectWithValue(error.response.data)
         }
     }
@@ -18,12 +18,12 @@ export const userLogin = createAsyncThunk (
 //User Register
 export const userRegister = createAsyncThunk (
     'user/register',
-    async(userInfo, thunkAPI) => {
+    async(userInfo: {email: string, password: string}, thunkAPI) => {
         try{
             const response = await customFetch.post ('register', userInfo);
             return response.data
         }
-        catch (error){
+        catch (error: any){
             return thunkAPI.rejectWithValue(error.response.data)
         }
     }
@@ -37,7 +37,7 @@ export const userLogout = createAsyncThunk (
             const response = await customFetch.delete ('logout');
             return response.data
         }
-        catch (error){
+        catch (error: any){
             return thunkAPI.rejectWithValue(error.response.data)
         }
     }

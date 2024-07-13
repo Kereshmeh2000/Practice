@@ -1,10 +1,10 @@
 import React from 'react'
+import ProfileImage from './components/ProfileImage'
 
 export default function Profile() {
     return (
         <>
-            <h1>Profile page</h1>
-            <button>Log out</button>
+            <ProfileImage />
         </>
     )
 }
