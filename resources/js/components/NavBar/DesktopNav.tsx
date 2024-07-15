@@ -1,12 +1,24 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import { IoSearchOutline } from "react-icons/io5";
 import { FaChevronDown } from "react-icons/fa6";
 import { HeaderNotifs, HeaderProfile } from '../../constract';
+import LoginForm from '../LoginForm/LoginForm';
+import { RxCross2 } from "react-icons/rx";
 
 
 
 export default function DesktopNav() {
+    
+    const [showLoginForm, setShowLoginForm] = useState(false);
+    const handleLoginClick = () => {
+        setShowLoginForm(true);
+    }
+
+    const handleCloseLoginForm = () => {
+        setShowLoginForm(false);
+    }
+
     return (
         <nav className="hidden lg:flex items-center justify-around bg-pink-500 text-white px-10 font-bolder">
 
@@ -43,7 +55,7 @@ export default function DesktopNav() {
             {/* NOTIFICATION */}
                 <div className='flex items-center px-5'>
                     {HeaderNotifs.map((notif, index) => (
-                        <div key={index} className='px-3'>
+                        <div key={index} className='px-2'>
                             <Link to={notif.url} className='flex items-center relative'>
                                 <div className='text-2xl font-bolder'>{notif.icon}</div>
                             </Link>
@@ -51,6 +63,20 @@ export default function DesktopNav() {
                         </div>
                     ))}
                 </div>
+
+
+                <button onClick={handleLoginClick} className='text-black px-4 py-2 bg-white rounded'>Signup</button>
+
+                {showLoginForm && (
+                        <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+                            <div className='relative'>
+                            <div className="bg-white p-8 rounded-lg ">
+                                <div className='absolute text-gray-300 top-0 left-0' onClick={handleCloseLoginForm}><RxCross2 /></div>
+                                <LoginForm />
+                            </div>
+                            </div>
+                        </div>
+                )}
             
         </nav>
     );

@@ -11,9 +11,9 @@ import React from 'react';
 
 export const HeaderNotifs = [
     {icon: <HiEnvelope /> , count: 5, url: '/chat'},
-    {icon: <IoNotifications /> , count: 12, url: '/'},
-    {icon: <HiGift /> , count: 31, url: '/'},
-    {icon: <FaEarthAmericas /> , count: 5, url: '/'},
+    {icon: <IoNotifications /> , count: 2, url: '/'},
+    {icon: <HiGift /> , count: 3, url: '/'},
+    {icon: <FaEarthAmericas /> , count: 8, url: '/'},
 ]
 
 export const HeaderProfile = [
