@@ -42,7 +42,7 @@ export default function MobileNav() {
                 )}
             </nav>
 
-            <div className="fixed bottom-0 w-full text-slate-400 lg:hidden border-t border-gray-200">
+            <div className="fixed bottom-0 w-full text-slate-400 lg:hidden bg-white border-t border-gray-200">
                 <div className="flex justify-around py-2">
                     {MobileBottomMenu.map((item, index) => (
                         <div key={index} className="flex flex-col items-center">
