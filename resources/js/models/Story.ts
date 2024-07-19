@@ -1,5 +1,6 @@
 import User from './User';
 import axios from 'axios';
+import fakeStory from './story.json';
 import { config } from '../config';
 import {isToday, isYesterday, format} from 'date-fns';
 
@@ -9,9 +10,6 @@ export default class Story {
     image: {
         id: number;
         url: string;
-        hasApproved: number;
-        imagableId: number 
-        imageableType: string
     };
     createdAt: string;
     user: User;
@@ -21,11 +19,7 @@ export default class Story {
         image: {
             id: number;
             url: string;
-            hasApproved: number;
-            imagableId: number;
-            imageableType: string ;
         };
-        created_at: string;
         createdAt: string;
         user: User;
     }) {
@@ -41,8 +35,7 @@ export default class Story {
 
     static async all(): Promise<Story[]> {
             try{
-                const response = await axios.get(mainUrl);
-                return response.data.map((story : any) => new Story(story));
+                return fakeStory.map((story) => Story.fromJson(story));
             }
             catch{
                 throw new Error('Error fetching users')
@@ -62,12 +55,12 @@ export default class Story {
     getFormattedStory = () => {
         return {
             id: this.id,
-            imageUrl: this.image.url,
+            imageUrl: this.image.url || 'https://picsum.photos/200/300',
             duration: 5000,
             storyHeader: {
-                profile: this.user.profileImage,
+                profile: this.user?.profileImage || 'https://picsum.photos/101/101',
                 time: this.getFormattedDate(),
-                name: this.user.name,
+                name: this.user?.name || 'Unknown',
             }
         }
     }

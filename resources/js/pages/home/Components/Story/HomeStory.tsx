@@ -1,12 +1,13 @@
 import React from 'react';
 import StoryContent from './StoryContent';
+import './story.css';
 
 
 export const HomeStory = () => {
     return (
         <>
             <div className="my-3">
-                <div className=" overflow-x-auto  hide-scrollbar">
+                <div className=" overflow-x-auto scrollbar-hide">
                     <div className='flex w-max'>
                         <div className="mx-1 p-1 rounded-full bg-gradient-to-r from-yellow-400 via-red-500 to-purple-500">
                             <img 
@@ -53,7 +54,6 @@ export const HomeStory = () => {
                     </div>
                 </div>
             </div>
-            <StoryContent />
         </>
     );
 };
