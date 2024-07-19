@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import { IoSearchOutline } from "react-icons/io5";
 import { FaChevronDown } from "react-icons/fa6";
-import { HeaderNotifs, HeaderProfile } from '../../constract';
+import { HeaderNotifs, HeaderProfile } from './constract';
 import LoginForm from '../LoginForm/LoginForm';
 import { RxCross2 } from "react-icons/rx";
 

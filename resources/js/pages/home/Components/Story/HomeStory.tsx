@@ -1,4 +1,6 @@
 import React from 'react';
+import StoryContent from './StoryContent';
+
 
 export const HomeStory = () => {
     return (
@@ -51,6 +53,7 @@ export const HomeStory = () => {
                     </div>
                 </div>
             </div>
+            <StoryContent />
         </>
     );
 };
