@@ -3,7 +3,7 @@ import React from 'react';
 export const HomeStory = () => {
     return (
         <>
-            <div className="px-3 my-3 md:px-20">
+            <div className="my-3">
                 <div className=" overflow-x-auto  hide-scrollbar">
                     <div className='flex w-max'>
                         <div className="mx-1 p-1 rounded-full bg-gradient-to-r from-yellow-400 via-red-500 to-purple-500">

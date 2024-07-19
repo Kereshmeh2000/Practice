@@ -1,17 +1,22 @@
 import React from 'react';
 import { FaGift } from "react-icons/fa";
 import HomeSideProfile from './HomeSideProfile';
+import { FaRegSmile } from "react-icons/fa";
+import { FaTelegramPlane } from "react-icons/fa";
+import { FaFlag } from "react-icons/fa";
+
+
 
 export const HomePost = () => {
     return (
         <>
             <div className="my-3 flex flex-col lg:flex-row">
-            <div className="hidden lg:block lg:w-1/4 bg-gray-100 p-3 border border-gray-200">
+            <div className="hidden lg:block lg:w-1/4">
                 <HomeSideProfile />
             </div>
                 {/* Post header  */} 
-                <div className='lg:w-3/4'>
-                <div className="bg-gray-100 border border-gray-200 p-3 flex items-center w-full">
+                <div className='lg:w-3/4 ml-5'>
+                <div className="bg-slate-50 border border-slate-200 p-3 flex items-center w-full">
                     <img
                         src="https://picsum.photos/101/101"
                         className="rounded-full w-10 h-10 mr-3"
@@ -28,11 +33,20 @@ export const HomePost = () => {
                     </div>
                 </div>
                 {/* Post body */}
-                <div className="bg-gray-100 border border-gray-200 pt-3">
-                    <img src="https://picsum.photos/101/101" className="w-full" />
-                    <div className="mt-5 flex">
-                        <div className="py-1 px-3 border border-gray-200">
+                <div className="bg-slate-50 border border-slate-200 pt-3">
+                    <img src="https://picsum.photos/101/101" className="h-screen w-screen" />
+                    <div className="mt-5 flex justify-end">
+                        <div className="py-2 px-4 border border-slate-200">
                             <FaGift />
+                        </div>
+                        <div className="py-2 px-4 border border-slate-200">
+                            <FaRegSmile />
+                        </div>
+                        <div className="py-2 px-4 border border-slate-200">
+                            <FaTelegramPlane />
+                        </div>
+                        <div className="py-2 px-4 border border-slate-200">
+                            <FaFlag />
                         </div>
                    </div>
                </div>

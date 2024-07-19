@@ -7,8 +7,10 @@ import './home.css';
 export default function Home() {
     return (
     <>
+    <div className='px-3 md:px-20'>
         <HomeStory />
         <HomePost />
+    </div>
     </>
  );
 }
