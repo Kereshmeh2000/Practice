@@ -1,18 +1,49 @@
-import React, {useState} from "react";
-import useLoginHandler from "../../custom-hooks/useLoginHandler";
-import useUserRedirect from "../../custom-hooks/useUserRedirect";
+import React, {useState, useEffect} from "react";
 import { FaEye, FaEyeSlash  } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogin } from "../../redux/userThunk";
+import { useNavigate } from "react-router-dom";
 
 
 export default function LoginForm() {
 
-    const {email, password, handleSubmit, handleEmail, handlePassword} = useLoginHandler();
-    useUserRedirect();
+    //login form
+    const [email, setEmail] = useState("");
+    const [password, setPassword]= useState("");
+    const dispatch = useDispatch();
 
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
+    }
+    const handlePassword = (e) => {
+        setPassword(e.target.value)
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const userInfo = {email , password};
+        dispatch(userLogin(userInfo));
+
+        setEmail("");
+        setPassword("");
+    }
+
+    // show or hide the password
     const [showPassword, setShowPassword] = useState(false);
     const togglePassword = () => {
         setShowPassword(!showPassword)
     }
+
+    //User login after entering information
+    const {isAuthenticated} = useSelector((state: any) => state.user)
+    const navigate = useNavigate();
+
+        useEffect(() => {
+            if(isAuthenticated) 
+                return navigate('/profile')
+            
+        }, [isAuthenticated, navigate]);
+
 
     return (
         <>
