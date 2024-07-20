@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {MobileBottomMenu} from './constract';
+import {MobileBottomMenu} from './constants';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross2 } from "react-icons/rx";
 

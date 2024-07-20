@@ -9,7 +9,8 @@ import { FiArchive } from "react-icons/fi";
 export default function HomeSideProfile () {
     return (
         <>
-        <div className='border border-slate-100 py-8 px-12 text-center'>
+            <div className='hidden lg:block lg:w-1/4'>
+            <div className='border border-slate-100 py-8 px-12 text-center'>
             <img src="https://picsum.photos/101/101" className='rounded-full mb-5 mx-auto' />
             <p>User name</p>
             <p>33, Divorced, İstanbul</p>
@@ -38,6 +39,8 @@ export default function HomeSideProfile () {
             </div>
             <p className='text-sm'>My Archives</p>
         </div>
+            </div>
+        
         </>
     )
 }

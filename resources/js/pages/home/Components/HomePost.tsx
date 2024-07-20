@@ -10,10 +10,6 @@ import { FaFlag } from "react-icons/fa";
 export const HomePost = () => {
     return (
         <>
-            <div className="my-3 flex flex-col lg:flex-row">
-            <div className="hidden lg:block lg:w-1/4">
-                <HomeSideProfile />
-            </div>
                 {/* Post header  */} 
                 <div className='lg:w-3/4 ml-5'>
                 <div className="bg-slate-50 border border-slate-200 p-3 flex items-center w-full">
@@ -50,7 +46,6 @@ export const HomePost = () => {
                         </div>
                    </div>
                </div>
-           </div>
            </div>
         </>
     )
