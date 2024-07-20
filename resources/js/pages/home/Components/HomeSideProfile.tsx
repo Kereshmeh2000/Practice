@@ -8,6 +8,8 @@ import User from '../../../models/User';
 
 
 export default function HomeSideProfile () {
+
+    //getting the user data from the User model
     const [user, setUser] = useState<User[]>([]);
 
     useEffect(() => {

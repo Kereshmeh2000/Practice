@@ -1,13 +1,12 @@
 [
     {
         "id":1,
-        "image": "https://fakeimg.pl/350x200/?text=Story1",
+        "image":  "https://fakeimg.pl/350x200/?text=Story1",
         "createdAt": "Today 12:00",
         "user": {
             "name": "Alice Johnson",
             "images": [
-                { "url": "https://picsum.photos/101/101" },
-                { "url": "https://picsum.photos/102/102" }
+                { "url": "https://picsum.photos/101/101" }
             ]
         }
     },
@@ -27,9 +26,7 @@
         "user": {
             "name": "Charlie Brown",
             "images": [
-                { "url": "https://picsum.photos/104/104" },
-                { "url": "https://picsum.photos/105/105" },
-                { "url": "https://picsum.photos/106/106" }
+                { "url": "https://picsum.photos/104/104" }
             ]
         }
     },
@@ -40,8 +37,7 @@
         "user": {
             "name": "David Wilson",
             "images": [
-                { "url": "https://picsum.photos/107/107" },
-                { "url": "https://picsum.photos/108/108" }
+                { "url": "https://picsum.photos/107/107" }
             ]
         }
     },
