@@ -3,30 +3,35 @@
       "id": 1,
       "name": "Alice Johnson",
       "gender": "female",
-      "email": "alice.johnson@example.com"
+      "email": "alice.johnson@example.com",
+      "profileImage": "https://picsum.photos/101/101"
     },
     {
       "id": 2,
       "name": "Bob Smith",
       "gender": "male",
-      "email": "bob.smith@example.com"
+      "email": "bob.smith@example.com",
+      "profileImage": "https://picsum.photos/101/101"
     },
     {
       "id": 3,
       "name": "Catherine Lee",
       "gender": "female",
-      "email": "catherine.lee@example.com"
+      "email": "catherine.lee@example.com",
+      "profileImage": "https://picsum.photos/101/101"
     },
     {
       "id": 4,
       "name": "David Brown",
       "gender": "male",
-      "email": "david.brown@example.com"
+      "email": "david.brown@example.com",
+      "profileImage": "https://picsum.photos/101/101"
     },
     {
       "id": 5,
       "name": "Eva Green",
       "gender": "female",
-      "email": "eva.green@example.com"
+      "email": "eva.green@example.com",
+      "profileImage": "https://picsum.photos/101/101"
     }
   ]
