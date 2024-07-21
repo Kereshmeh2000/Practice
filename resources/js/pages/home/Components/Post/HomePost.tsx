@@ -4,9 +4,7 @@ import { FaRegSmile } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaFlag } from "react-icons/fa";
 import Comment from '../../../../models/Comment';
-
-
-
+import { RxCross2 } from "react-icons/rx";
 
 export const HomePost = () => {
     //show add comments when the user clicks on the comment input
@@ -85,7 +83,9 @@ export const HomePost = () => {
            </div>
            
            {showAllComment && (
-                    <div className="fixed top-0 left-0 right-0 bottom-0 bg-white text-black">
+                    <div className='relative'>
+                        <div className='absolute top-4 left-4 text-xl z-10 cursor-pointer' onClick={closeComment}><RxCross2 /></div>
+                        <div className="fixed top-0 left-0 right-0 bottom-0 bg-white text-black">
                         <div class='w-full h-full flex flex-col'>
                             <h3 className='text-center text-xl py-2 font-semibold'>Comments</h3>
                             <div className='flex-1 overflow-y-auto p-3'>
@@ -116,6 +116,7 @@ export const HomePost = () => {
                                 </div>
                              </div>
                         </div>
+                    </div>
                     </div>
                 )}
         </>
