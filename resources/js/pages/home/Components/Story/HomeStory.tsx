@@ -30,10 +30,6 @@ export const HomeStory = () => {
                                 return(
                                     <div className="mx-1 p-1 rounded-full bg-gradient-to-r from-yellow-400 via-red-500 to-purple-500">
                                         <div key={stories.id}>
-                                            {/* <img 
-                                            className="w-14 h-14 rounded-full border-4 border-white" 
-                                            src={stories.image.url} 
-                                            /> */}
                                             <img className="w-14 h-14 rounded-full border-4 border-white" src={stories.image} alt="" />
                                         </div>
                                     </div>

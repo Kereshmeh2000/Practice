@@ -1,6 +1,6 @@
 import React from "react";
 import { HomeStory } from "./Components/Story/HomeStory";
-import { HomePost } from "./Components/HomePost";
+import { HomePost } from "./Components/Post/HomePost";
 import  HomeSideProfile  from "./Components/HomeSideProfile";
 
 

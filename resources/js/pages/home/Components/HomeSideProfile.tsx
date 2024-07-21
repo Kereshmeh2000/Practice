@@ -30,8 +30,8 @@ export default function HomeSideProfile () {
             <div className='hidden lg:block lg:w-1/4'>
                 <div className='border border-slate-100 py-8 px-12 text-center'>
                         <div>
-                            <img src={user[0].profileImage} className='rounded-full mb-5 mx-auto' />
-                            <p>{user[0].name}</p>
+                            <img src={user.profileImage} className='rounded-full mb-5 mx-auto' />
+                            <p>{user.name}</p>
                             <p>33, Divorced, İstanbul</p>
                         </div>
                 </div>

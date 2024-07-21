@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "userName": "John",
+        "postId": 1,
+        "comment": "Wow, this is amazing! I've never seen anything like it before. Keep up the great work!",
+        "createdAt": "2h",
+        "userProfile": "https://picsum.photos/103/103"
+    },
+    {
+        "id": 2,
+        "userName": "Kereshmeh",
+        "postId": 1,
+        "comment": "Could you please provide more details on the topic? I'm really interested in learning more about it.",
+        "createdAt": "1h",
+        "userProfile": "https://picsum.photos/103/103"
+    },
+    {
+        "id": 3,
+        "userName": "Sina",
+        "postId": 2,
+        "comment": "This was very helpful, thank you! I've been struggling with this for a while, and your explanation made it clear.",
+        "createdAt": "5h",
+        "userProfile": "https://picsum.photos/103/103"
+    },
+    {
+        "id": 4,
+        "userName": "Melody",
+        "postId": 2,
+        "comment": "This was very helpful, thank you! I've been struggling with this for a while, and your explanation made it clear.",
+        "createdAt": "10h",
+        "userProfile": "https://picsum.photos/103/103"
+    },
+    {
+        "id": 5,
+        "userName": "Lili",
+        "postId": 3,
+        "comment": "Great post! I appreciate the effort you put into writing this. Looking forward to your next update!",
+        "createdAt": "2h",
+        "userProfile": "https://picsum.photos/103/103"
+    }
+]

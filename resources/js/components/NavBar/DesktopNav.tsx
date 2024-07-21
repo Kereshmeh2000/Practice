@@ -66,14 +66,14 @@ export default function DesktopNav() {
                 <button onClick={handleLoginClick} className='text-black px-4 py-2 bg-white rounded'>Signup</button>
 
                 {showLoginForm && (
-                        <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
-                            <div className='relative'>
+                    <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+                        <div className='relative'>
                             <div className="bg-white p-8 rounded-lg ">
                                 <div className='absolute text-gray-300 top-0 left-0 cursor-pointer' onClick={handleCloseLoginForm}><RxCross2 /></div>
                                 <LoginForm />
                             </div>
-                            </div>
                         </div>
+                    </div>
                 )}
             
         </nav>
