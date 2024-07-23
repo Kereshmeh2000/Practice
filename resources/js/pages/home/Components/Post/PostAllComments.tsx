@@ -35,8 +35,7 @@ export default function PostAllComments() {
 
     return (
         <>
-            <div className='relative'>
-                <div className='absolute top-4 left-4 text-xl z-10 cursor-pointer' onClick={closeComment}><RxCross2 /></div>
+                <div className='fixed top-4 text-xl z-10 cursor-pointer' onClick={closeComment}><RxCross2 /></div>
                     <div className="fixed top-0 left-0 right-0 bottom-0 bg-white text-black">
                         <div class='w-full h-full flex flex-col'>
                             <h3 className='text-center text-xl py-2 font-semibold'>Comments</h3>
@@ -44,8 +43,8 @@ export default function PostAllComments() {
                             {comment.map((comments) => (
                                 <div key={comments.id} className='p-3'>
                                     <div className='flex'>
-                                        <img src={comments.userProfile} className='w-7 h-7 rounded-full' alt="" />
-                                        <p className='mx-3'>{comments.userName}</p>
+                                        <img src={comments.user.profileImage.url} className='w-7 h-7 rounded-full' alt="" />
+                                        <p className='mx-3'>{comments.user.name}</p>
                                         <p className='text-xs text-slate-500'>{comments.createdAt}</p>
                                     </div>
                                     <p>{comments.comment}</p>
@@ -69,7 +68,6 @@ export default function PostAllComments() {
                              </div>
                         </div>
                     </div>
-                </div>
         </>
     )
 }

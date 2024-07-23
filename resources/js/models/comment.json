@@ -5,7 +5,8 @@
         "createdAt": "2h",
         "user": {
             "id": 1,
-            "name": "Alice Johnson"
+            "name": "Alice Johnson",
+            "profileImage": "https://picsum.photos/101/101"
         },
         "post": {
             "id": 1
@@ -17,7 +18,8 @@
         "createdAt": "1h",
         "user": {
             "id": 2,
-            "name": "Alice Johnson"
+            "name": "Alice Johnson",
+            "profileImage": "https://picsum.photos/101/101"
         },
         "post": {
             "id": 2
@@ -29,7 +31,8 @@
         "createdAt": "5h",
         "user": {
             "id": 3,
-            "name": "Alice Johnson"
+            "name": "Alice Johnson",
+            "profileImage": "https://picsum.photos/101/101"
         },
         "post": {
             "id": 3
@@ -41,7 +44,8 @@
         "createdAt": "10h",
         "user": {
             "id": 4,
-            "name": "Alice Johnson"
+            "name": "Alice Johnson",
+            "profileImage": "https://picsum.photos/101/101"
         },
         "post": {
             "id": 4
@@ -53,7 +57,8 @@
         "createdAt": "2h",
         "user": {
             "id": 5,
-            "name": "Alice Johnson"
+            "name": "Alice Johnson",
+            "profileImage": "https://picsum.photos/101/101"
         },
         "post": {
             "id": 5

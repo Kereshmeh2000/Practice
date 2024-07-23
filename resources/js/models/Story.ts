@@ -1,5 +1,4 @@
 import User from './User';
-import axios from 'axios';
 import fakeStory from './story.json';
 import { config } from '../config';
 // import {isToday, isYesterday, format} from 'date-fns';
@@ -7,19 +6,13 @@ import { config } from '../config';
 const mainUrl = `${config.host}/api/stories`;
 export default class Story {
     id: number;
-    image: {
-        id: number;
-        url: string;
-    };
+    image: string;
     createdAt: string;
     user: User;
 
     constructor(json: {
         id: number;
-        image: {
-            id: number;
-            url: string;
-        };
+        image: string;
         createdAt: string;
         user: User;
     }) {

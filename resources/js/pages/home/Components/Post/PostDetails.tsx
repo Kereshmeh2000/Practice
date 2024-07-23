@@ -4,6 +4,8 @@ import { FaRegSmile } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaFlag } from "react-icons/fa";
 import PostAllComments from './PostAllComments';
+import User from '../../../../models/User';
+
 
 export const PostDetails = () => {
     //show all comments when the user clicks on the comment input
@@ -55,7 +57,7 @@ export const PostDetails = () => {
                </div>
                {/* comment section */}
                <div className='border border-slate-200 p-3 flex items-center'>
-                    <img src='{comment.userProfile} 'className='w-7 h-7 rounded-full mr-3' alt="" />
+                    <img src='{}' className='w-7 h-7 rounded-full mr-3' alt="" />
                     <div className='flex items-center w-full'>
                         <input type="text" onClick={showComment} className='w-full mr-2 p-1 bg-slate-50 border border-gray-100 rounded' placeholder='Add a comment' />
                         <div className=''>

@@ -5,20 +5,20 @@ export class Post {
     id: number;
     caption: string;
     image: string;
-    author: User;
+    user: User;
     createdAt: string;
 
     constructor(json: {
         id: number;
         caption: string;
         image: string;
-        author: User;
+        user: User;
         createdAt: string;
     }) {
         this.id = json.id;
         this.caption = json.caption;
         this.image = json.image;
-        this.author = json.author;
+        this.user = new User(json.user);
         this.createdAt = json.createdAt;
     }
 
