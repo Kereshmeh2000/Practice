@@ -1,20 +1,20 @@
 import fakeComment from './comment.json';
+import { Post } from './Post';
+import User from './User';
 
 export default class Comment {
     id: number;
-    userName: string;
-    postId: number;
     comment: string;
     createdAt: string;
-    userProfile: string;
+    user: User;
+    post: Post;
 
-    constructor(json:{ id: number, userName: string, postId: number, comment: string, createdAt: string, userProfile: string}) {
+    constructor(json:{ id: number, comment: string, createdAt: string, user: User, post: Post }) {
         this.id = json.id;
-        this.userName = json.userName;
-        this.postId = json.postId;
         this.comment = json.comment;
         this.createdAt = json.createdAt;
-        this.userProfile = json.userProfile;
+        this.user = new User(json.user);
+        this.post = new Post(json.post);
     }
 
     static async all(): Promise<Comment[]> {

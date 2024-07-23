@@ -1,6 +1,6 @@
 import React from "react";
 import { HomeStory } from "./Components/Story/HomeStory";
-import { HomePost } from "./Components/Post/HomePost";
+import { PostDetails } from "./Components/Post/PostDetails";
 import  HomeSideProfile  from "./Components/HomeSideProfile";
 
 
@@ -11,7 +11,7 @@ export default function Home() {
             <HomeStory />
             <div className='flex my-3 flex-col lg:flex-row'>
                 <HomeSideProfile />
-                <HomePost />
+                <PostDetails />
             </div>
         </div>
     </>
