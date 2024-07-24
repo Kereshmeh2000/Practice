@@ -8,13 +8,13 @@ export default class Story {
     id: number;
     image: string;
     createdAt: string;
-    user: User;
+    user: [];
 
     constructor(json: {
         id: number;
         image: string;
         createdAt: string;
-        user: User;
+        user: [];
     }) {
         this.id = json.id;
         this.image = json.image;
