@@ -4,7 +4,8 @@ import { FaRegSmile } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaFlag } from "react-icons/fa";
 import PostAllComments from './PostAllComments';
-import User from '../../../../models/User';
+import { RxCross2 } from "react-icons/rx";
+
 
 
 export const PostDetails = () => {
@@ -68,8 +69,11 @@ export const PostDetails = () => {
            </div>
            
            {showAllComment && (
+                <>
+                    <button className='fixed top-4 text-xl z-10 cursor-pointer' onClick={closeComment}><RxCross2 /></button>
                     <PostAllComments />
-                )}
+                </>
+            )}
         </>
     )
 }

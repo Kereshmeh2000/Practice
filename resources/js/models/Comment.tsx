@@ -6,15 +6,15 @@ export default class Comment {
     id: number;
     comment: string;
     createdAt: string;
-    user: User;
-    post: Post;
+    user: [];
+    post: [];
 
-    constructor(json:{ id: number, comment: string, createdAt: string, user: User, post: Post }) {
+    constructor(json:{ id: number, comment: string, createdAt: string, user: [], post: [] }) {
         this.id = json.id;
         this.comment = json.comment;
         this.createdAt = json.createdAt;
-        this.user = new User(json.user);
-        this.post = new Post(json.post);
+        this.user =  json.user;
+        this.post = json.post;
     }
 
     static async all(): Promise<Comment[]> {
