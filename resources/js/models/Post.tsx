@@ -1,7 +1,7 @@
 import fakePostData from './post.json'
 import User from './User';
 
-export class Post {
+export default class Post {
     id: number;
     caption: string;
     image: string;
@@ -18,7 +18,7 @@ export class Post {
         this.id = json.id;
         this.caption = json.caption;
         this.image = json.image;
-        this.user = new User(json.user);
+        this.user = User.fromJson(json.user);
         this.createdAt = json.createdAt;
     }
 

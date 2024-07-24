@@ -27,12 +27,12 @@ export default function HomeSideProfile () {
 
     return (
         <>
-            <div className='hidden lg:block lg:w-1/4'>
+            <div className='hidden lg:block lg:w-1/4 sticky'>
                 <div className='border border-slate-100 py-8 px-12 text-center'>
                         <div>
                             <img src={user.profileImage} className='rounded-full mb-5 mx-auto' />
                             <p>{user.name}</p>
-                            <p>33, Divorced, İstanbul</p>
+                            <p>{user.location}</p>
                         </div>
                 </div>
                 <div className='border border-slate-100 p-5 flex items-center font-bold	text-slate-500'>

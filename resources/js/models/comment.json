@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "comment": "Wow, this is amazing! I've never seen anything like it before. Keep up the great work!",
+        "body": "Wow, this is amazing! I've never seen anything like it before. Keep up the great work!",
         "createdAt": "2h",
         "user": {
             "id": 1,
@@ -14,7 +14,7 @@
     },
     {
         "id": 2,
-        "comment": "Could you please provide more details on the topic? I'm really interested in learning more about it.",
+        "body": "Could you please provide more details on the topic? I'm really interested in learning more about it.",
         "createdAt": "1h",
         "user": {
             "id": 2,
@@ -27,7 +27,7 @@
     },
     {
         "id": 3,
-        "comment": "This was very helpful, thank you! I've been struggling with this for a while, and your explanation made it clear.",
+        "body": "This was very helpful, thank you! I've been struggling with this for a while, and your explanation made it clear.",
         "createdAt": "5h",
         "user": {
             "id": 3,
@@ -40,7 +40,7 @@
     },
     {
         "id": 4,
-        "comment": "This was very helpful, thank you! I've been struggling with this for a while, and your explanation made it clear.",
+        "body": "This was very helpful, thank you! I've been struggling with this for a while, and your explanation made it clear.",
         "createdAt": "10h",
         "user": {
             "id": 4,
@@ -53,7 +53,7 @@
     },
     {
         "id": 5,
-        "comment": "Great post! I appreciate the effort you put into writing this. Looking forward to your next update!",
+        "body": "Great post! I appreciate the effort you put into writing this. Looking forward to your next update!",
         "createdAt": "2h",
         "user": {
             "id": 5,

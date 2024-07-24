@@ -4,34 +4,39 @@
       "name": "Alice Johnson",
       "gender": "female",
       "email": "alice.johnson@example.com",
-      "profileImage": "https://picsum.photos/101/101"
+      "profileImage": "https://picsum.photos/101/101",
+      "location": "New York, USA"
     },
     {
       "id": 2,
       "name": "Bob Smith",
       "gender": "male",
       "email": "bob.smith@example.com",
-      "profileImage": "https://picsum.photos/101/102"
+      "profileImage": "https://picsum.photos/101/102",
+      "location": "Los Angeles, USA"
     },
     {
       "id": 3,
       "name": "Catherine Lee",
       "gender": "female",
       "email": "catherine.lee@example.com",
-      "profileImage": "https://picsum.photos/101/103"
+      "profileImage": "https://picsum.photos/101/103",
+      "location": "Chicago, USA"
     },
     {
       "id": 4,
       "name": "David Brown",
       "gender": "male",
       "email": "david.brown@example.com",
-      "profileImage": "https://picsum.photos/101/104"
+      "profileImage": "https://picsum.photos/101/104",
+      "location": "Houston, USA"
     },
     {
       "id": 5,
       "name": "Eva Green",
       "gender": "female",
       "email": "eva.green@example.com",
-      "profileImage": "https://picsum.photos/101/105"
+      "profileImage": "https://picsum.photos/101/105",
+      "location": "Phoenix, USA"
     }
   ]
