@@ -3,13 +3,16 @@ import './story.css';
 import Story from '../../../../models/Story';
 import Stories from 'react-insta-stories';
 import { RxCross2 } from "react-icons/rx";
+import { FaHeart } from "react-icons/fa";
 import { FiSend } from "react-icons/fi";
-import { FaHeart } from "react-icons/fa6";
+
+
+
 
 export const HomeStory = () => {
 
-    // گرفتن داده‌های استوری از مدل Story
-    const [userStories, setUserStories] = React.useState<any[]>([]);
+    //getttin the story data from the Story model
+    const [userStories, setUserStories] = React.useState<Story[]>([]);
 
     React.useEffect(() => {
         const fetchStories = async () => {
@@ -20,7 +23,7 @@ export const HomeStory = () => {
                     header: {
                         heading: story.user.name,
                         subheading: story.createdAt,
-                        profileImage: story.user.images
+                        profileImage: story.user.profileImage
                     }
                 }));
                 setUserStories(formattedStories);
@@ -32,39 +35,40 @@ export const HomeStory = () => {
         fetchStories();
     }, []);
 
-    // وضعیت نمایش استوری
+    //story modal
     const [showStoryModal, setShowStoryModal] = React.useState(false);
-    const showStoryModalHandler = () => setShowStoryModal(true);
-    const closeStoryModalHandler = () => setShowStoryModal(false);
+    const showStoryModalHandler = () => {
+        setShowStoryModal(true);
+    };
+    const closeStoryModalHandler = () => {
+        setShowStoryModal(false);
+    };
 
-    // تغییر رنگ آیکون قلب
+    //heart color handler
     const [heartColor, setHeartColor] = React.useState(false);
-    const heartColorHandler = () => setHeartColor(!heartColor);
+    const heartColorHandler = () => {
+        setHeartColor(!heartColor);
+    };
 
     return (
         <>
             <div className="my-3">
-                <div className="overflow-x-auto scrollbar-hide">
+                <div className=" overflow-x-auto scrollbar-hide">
                     <div className='flex flex-row w-max'>
-                        {userStories.map((story, index) => (
-                            <div
-                                key={index} // استفاده از index به عنوان کلید
-                                className="cursor-pointer mx-1 p-1 rounded-full bg-gradient-to-r from-yellow-400 via-red-500 to-purple-500"
-                            >
-                                <div>
-                                    <img
-                                        onClick={showStoryModalHandler}
-                                        className="w-14 h-14 rounded-full border-4 border-white"
-                                        src={story.header.profileImage}
-                                        alt=""
-                                    />
-                                </div>
-                            </div>
-                        ))}
+                            {userStories.map((story)=> {
+                                return(
+                                    <div className="cursor-pointer mx-1 p-1 rounded-full bg-gradient-to-r from-yellow-400 via-red-500 to-purple-500">
+                                        <div key={story.id}>
+                                            <img onClick={showStoryModalHandler} className="w-14 h-14 rounded-full border-4 border-white" src={story.header.profileImage} alt="" />
+                                        </div>
+                                    </div>
+                                )
+                            })}
                     </div>
                 </div>
             </div>
             {showStoryModal && (
+                <>
                 <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
                     <div className='relative w-full h-full'>
                         <button
@@ -101,6 +105,7 @@ export const HomeStory = () => {
                         </div>
                     </div>
                 </div>
+                </>
             )}
         </>
     );
