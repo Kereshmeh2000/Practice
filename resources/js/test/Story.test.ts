@@ -8,7 +8,7 @@ describe("story test", () => {
         const story = Story.fromJson(testStory);
         expect(story.image).toBe(testStory.image);
         expect(story.createdAt).toBe(testStory.createdAt);
-        expect(story.user).toBe(testStory.user);
+        expect(story.user.profileImage).toBe(testStory.user.profileImage);
         expect(story.id).toBe(testStory.id);
     })
     it("should return all stories", async () => {

@@ -45,7 +45,7 @@ export default function PostAllComments() {
                     </div>
                     <div className='fixed bottom-0 w-full bg-white'>
                         <div className='border border-slate-200 p-3 flex items-center'>
-                            <img src='{}' className='w-7 h-7 rounded-full mr-3' alt="" />
+                            <img src='{comment.user.profileImage}' className='w-7 h-7 rounded-full mr-3' alt="" />
                             <div className='flex items-center w-full'>
                                 <input type="text" className='w-full mr-2 p-1 bg-slate-50 border border-gray-100 rounded' placeholder='Add a comment' />
                                 <div className=''>

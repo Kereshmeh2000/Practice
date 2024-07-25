@@ -27,9 +27,16 @@ export default function HomeSideProfile () {
 
     return (
         <>
-            <div className='hidden lg:block lg:w-1/4 sticky'>
+            <div className='hidden lg:block lg:w-1/4 sticky top-0'>
                 <div className='border border-slate-100 py-8 px-12 text-center'>
-                        <div>
+                    {/* {user.map((user) =>
+                        <div key={user.id}>
+                            <img src={user.profileImage} className='rounded-full mb-5 mx-auto' />
+                            <p>{user.name}</p>
+                            <p>{user.location}</p>
+                        </div>
+                    )} */}
+                        <div key={user.id}>
                             <img src={user.profileImage} className='rounded-full mb-5 mx-auto' />
                             <p>{user.name}</p>
                             <p>{user.location}</p>

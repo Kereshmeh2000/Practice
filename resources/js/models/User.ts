@@ -6,13 +6,15 @@ class User {
     gender: string;
     email: string;
     profileImage: string;
+    location: string;
 
-    constructor(json: {id: number, name: string, gender: string, email: string}) {
+    constructor(json: {id: number, name: string, gender: string, email: string, profileImage: string, location: string}) {
         this.id = json.id
         this.name = json.name
         this.gender = json.gender
         this.email = json.email
-        this.profileImage = `https://picsum.photos/101/101`
+        this.profileImage = json.profileImage
+        this.location = json.location
     }
     
     static fromJson (json: any): User {

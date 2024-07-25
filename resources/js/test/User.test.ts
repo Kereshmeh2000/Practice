@@ -9,6 +9,7 @@ describe ("user test", () => {
         expect(user.name).toBe(testUser.name);
         expect(user.email).toBe(testUser.email);
         expect(user.id).toBe(testUser.id);
+        expect(user.location).toBe(testUser.location);
     })
 
     it("", async () => {
