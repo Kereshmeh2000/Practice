@@ -1,7 +1,6 @@
 import User from './User';
 import fakeStory from './story.json';
 import { config } from '../config';
-// import {isToday, isYesterday, format} from 'date-fns';
 
 const mainUrl = `${config.host}/api/stories`;
 export default class Story {
@@ -34,27 +33,4 @@ export default class Story {
                 throw new Error('Error fetching users')
             }
     }
-
-    //   getFormattedDate = () => {
-    //     if (isToday(this.createdAt)) {
-    //         return `Toady at ${format((this.createdAt), 'HH:mm')}`
-    //     }
-    //     if (isYesterday(this.createdAt)) {
-    //         return `Yesterday at ${format((this.createdAt), 'HH:mm')}`
-    //     }
-    //     return format((this.createdAt), 'dd/MM/yyyy')
-    // };
-
-    // getFormattedStory = () => {
-    //     return {
-    //         id: this.id,
-    //         imageUrl: this.image.url,
-    //         duration: 5000,
-    //         storyHeader: {
-    //             profile: this.user?.profileImage,
-    //             time: this.getFormattedDate(),
-    //             name: this.user?.name,
-    //         }
-    //     }
-    // }
 }

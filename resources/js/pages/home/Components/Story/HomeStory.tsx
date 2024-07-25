@@ -85,7 +85,7 @@ export const HomeStory = () => {
                         />
 
                         {/* story footer */}
-                        <div className='absolute bottom-0 w-full p-4'>
+                        <div className='absolute bottom-0  p-4'>
                             <div className='flex items-center'>
                                 <input
                                     type="text"
