@@ -1,7 +1,7 @@
 import React from "react";
 import { HomeStory } from "./Components/Story/HomeStory";
 import { PostDetails } from "./Components/Post/PostDetails";
-import  HomeSideProfile  from "./Components/HomeSideProfile";
+import  ProfileSideBar  from "../../components/ProfileSideBar";
 
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
         <div className='px-3 md:px-20 '>
             <HomeStory />
             <div className='flex my-3 flex-col lg:flex-row'>
-                <HomeSideProfile />
+                <ProfileSideBar />
                 <PostDetails />
             </div>
         </div>
