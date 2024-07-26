@@ -37,6 +37,14 @@ export default function ProfileSideBar() {
         setBioTextModal(false);
     }
 
+    //txt area limitation
+    const [text, setText] = useState('');
+    const maxLength = 500;
+
+    const handleTextChange = (e) => {
+        setText(e.target.value);
+    };
+
     return (
         <>
             <div className="hidden lg:block lg:w-1/4 sticky top-0">
@@ -51,12 +59,12 @@ export default function ProfileSideBar() {
                 {/* Photos */}
                 <div
                     onClick={handlePhotoModalOpen}
-                    className="border border-slate-100 p-5 flex items-center font-bold text-slate-500 cursor-pointer"
+                    className="border border-slate-100 p-5 flex items-center font-bold text-slate-500"
                 >
                     <div className="mr-5 text-2xl">
                         <MdOutlinePhotoLibrary />
                     </div>
-                    <p className="text-sm">Photos</p>
+                    <p className=" cursor-pointer text-sm">Photos</p>
                     {photoModal && (
                         <Modal
                             showModal={photoModal}
@@ -88,11 +96,11 @@ export default function ProfileSideBar() {
 
                 <div 
                 onClick={handleInfoModalOpen}
-                className="border border-slate-100 p-5 flex items-center font-bold text-slate-500 cursor-pointer">
+                className="border border-slate-100 p-5 flex items-center font-bold text-slate-500">
                     <div className="mr-5 text-2xl">
                         <FaRegCircleUser />
                     </div>
-                    <p className="text-sm">Main Info</p>
+                    <p className=" cursor-pointer text-sm">Main Info</p>
                     {infoModal && (
                         <Modal 
                         showModal={infoModal}
@@ -109,11 +117,11 @@ export default function ProfileSideBar() {
 
                 <div 
                 onClick={handleBioTextModalOpen}
-                className="border border-slate-100 p-5 flex items-center font-bold text-slate-500 cursor-pointer">
+                className="border border-slate-100 p-5 flex items-center font-bold text-slate-500">
                     <div className="mr-5 text-2xl">
                         <TiEdit />
                     </div>
-                    <p className="text-sm">Profile Text</p>
+                    <p className=" cursor-pointer text-sm">Profile Text</p>
                     {bioTextModal && (
                         <Modal 
                         showModal={bioTextModal}
@@ -121,17 +129,30 @@ export default function ProfileSideBar() {
                         title={'Profile Text'}
                         icon={<TiEdit />}
                         >
-                            this is a form  for bio text
+                            <div className='text-sm text-gray-500 font-normal'>
+                                <textarea 
+                                    className="w-full h-48 bg-slate-100 p-2"
+                                    value={text} 
+                                    maxLength={maxLength} 
+                                    onChange={handleTextChange}
+                                    placeholder='PROFILE TEXT'
+                                ></textarea>
+                                <p>{text.length}/{maxLength}</p>
+                                <div className='mt-5 flex justify-end'>
+                                    <button onClick={handleBioTextModalClose} className='py-2 px-4 m-1 border border-gray-300'>Cancle</button>
+                                    <button className='py-2 px-4 m-1 border border-gray-300'>Save</button>
+                                </div>
+                            </div>
                         </Modal>
                     )}
                 </div>
 
 
-                <div className="border border-slate-100 p-5 flex items-center font-bold text-slate-500 cursor-pointer">
+                <div className="border border-slate-100 p-5 flex items-center font-bold text-slate-500">
                     <div className="mr-5 text-2xl">
                         <FiArchive />
                     </div>
-                    <p className="text-sm">My Archives</p>
+                    <p className=" cursor-pointer text-sm">My Archives</p>
                 </div>
             </div>
         </>
