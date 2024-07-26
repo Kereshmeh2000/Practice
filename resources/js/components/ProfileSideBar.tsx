@@ -9,37 +9,38 @@ import Modal from '../pages/profile/components/Modal';
 import { FaPlus } from 'react-icons/fa';
 
 export default function ProfileSideBar() {
-    const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
-    const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
-    const [isTextModalOpen, setIsTextModalOpen] = useState(false);
 
-    //Main Info modal
+    //Photo Modal
+    const [photoModal, setPhotoModal] = useState(false);
+    const handlePhotoModalOpen = () => {
+        setPhotoModal(true);
+    }
+    const handlePhotoModalClose = () => {
+        setPhotoModal(false);
+    }
 
-    //getting the user data from the User model
-    // const [user, setUser] = useState<User[]>([]);
+    //Info Modal
+    const [infoModal, setInfoModal] = useState(false);
+    const handleInfoModalOpen = () => {
+        setInfoModal(true);
+    }
+    const handleInfoModalClose = () => {
+        setInfoModal(false);
+    }
 
-    // useEffect(() => {
-    //   const fetchUsers = async () => {
-    //     try {
-    //       const userList = await User.all();
-    //       setUser(userList);
-    //     } catch (error) {
-    //       console.error("Error fetching users:", error);
-    //     }
-    //   };
-
-    //   fetchUsers();
-    // }, []);
+    //Bio Text Modal
+    const [bioTextModal, setBioTextModal] = useState(false);
+    const handleBioTextModalOpen = () => {
+        setBioTextModal(true);
+    }
+    const handleBioTextModalClose = () => {
+        setBioTextModal(false);
+    }
 
     return (
         <>
             <div className="hidden lg:block lg:w-1/4 sticky top-0">
                 <div className="border border-slate-100 py-8 px-12 text-center">
-                    {/* <div key={user.id}>
-                        <img src={user.profileImage} className='rounded-full mb-5 mx-auto' />
-                        <p>{user.name}</p>
-                        <p>{user.location}</p>
-                    </div> */}
                     <div>
                         <img src={avatar} />
                         <p>User Name</p>
@@ -49,17 +50,17 @@ export default function ProfileSideBar() {
 
                 {/* Photos */}
                 <div
-                    onClick={() => setIsPhotoModalOpen(true)}
+                    onClick={handlePhotoModalOpen}
                     className="border border-slate-100 p-5 flex items-center font-bold text-slate-500 cursor-pointer"
                 >
                     <div className="mr-5 text-2xl">
                         <MdOutlinePhotoLibrary />
                     </div>
                     <p className="text-sm">Photos</p>
-                    {isPhotoModalOpen && (
+                    {photoModal && (
                         <Modal
-                            showModal={isPhotoModalOpen}
-                            closeModal={() => setIsPhotoModalOpen(false)}
+                            showModal={photoModal}
+                            closeModal={handlePhotoModalClose}
                             title="Photos"
                             icon={<MdOutlinePhotoLibrary />}
                         >
@@ -82,18 +83,50 @@ export default function ProfileSideBar() {
                         </Modal>
                     )}
                 </div>
-                <div className="border border-slate-100 p-5 flex items-center font-bold text-slate-500 cursor-pointer">
+
+                {/* main Info */}
+
+                <div 
+                onClick={handleInfoModalOpen}
+                className="border border-slate-100 p-5 flex items-center font-bold text-slate-500 cursor-pointer">
                     <div className="mr-5 text-2xl">
                         <FaRegCircleUser />
                     </div>
                     <p className="text-sm">Main Info</p>
+                    {infoModal && (
+                        <Modal 
+                        showModal={infoModal}
+                        closeModal={handleInfoModalClose}
+                        title={'Main Info'}
+                        icon={<FaRegCircleUser />}
+                        >
+                            this is a form 
+                        </Modal>
+                    )}
                 </div>
-                <div className="border border-slate-100 p-5 flex items-center font-bold text-slate-500 cursor-pointer">
+
+                {/* Profile Text */}
+
+                <div 
+                onClick={handleBioTextModalOpen}
+                className="border border-slate-100 p-5 flex items-center font-bold text-slate-500 cursor-pointer">
                     <div className="mr-5 text-2xl">
                         <TiEdit />
                     </div>
                     <p className="text-sm">Profile Text</p>
+                    {bioTextModal && (
+                        <Modal 
+                        showModal={bioTextModal}
+                        closeModal={handleBioTextModalClose}
+                        title={'Profile Text'}
+                        icon={<TiEdit />}
+                        >
+                            this is a form  for bio text
+                        </Modal>
+                    )}
                 </div>
+
+
                 <div className="border border-slate-100 p-5 flex items-center font-bold text-slate-500 cursor-pointer">
                     <div className="mr-5 text-2xl">
                         <FiArchive />

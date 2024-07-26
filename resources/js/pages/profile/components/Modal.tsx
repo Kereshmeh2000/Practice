@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { RxCross2 } from 'react-icons/rx';
 
 interface Modal{
-    showModal: boolean;
+    showModal?: boolean;
     closeModal: () => void;
     title: String;
     children?: React.ReactNode;
