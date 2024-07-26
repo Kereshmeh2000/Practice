@@ -4,7 +4,7 @@ import { RxCross2 } from 'react-icons/rx';
 interface Modal{
     showModal?: boolean;
     closeModal: () => void;
-    title: String;
+    title: string;
     children?: React.ReactNode;
     icon: React.ReactNode;
 }

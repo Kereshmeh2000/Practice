@@ -1,5 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
+import avatar from '../../../../../public/assets/images/avatar.png';
+
+
+
 
 export default function ProfileImage() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -20,10 +24,10 @@ export default function ProfileImage() {
         <>
             <div
                 {...getRootProps()}
-                className='border border-black pointer p-4 text-center'
+                className='w-full cursor-pointer p-4 text-center'
             >
                 <input {...getInputProps()} />
-                <p>Drop the files here, or click to select one</p>
+                <img className='mx-auto' src={avatar} />
             </div>
             {selectedImage && (
                 <div>

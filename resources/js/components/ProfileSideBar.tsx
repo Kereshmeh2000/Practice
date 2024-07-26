@@ -28,13 +28,13 @@ export default function ProfileSideBar() {
         setInfoModal(false);
     }
 
-    //Bio Text Modal
-    const [bioTextModal, setBioTextModal] = useState(false);
+    //Profile Text Modal
+    const [profileTextModal, setProfileTextModal] = useState(false);
     const handleBioTextModalOpen = () => {
-        setBioTextModal(true);
+        setProfileTextModal(true);
     }
     const handleBioTextModalClose = () => {
-        setBioTextModal(false);
+        setProfileTextModal(false);
     }
 
     //txt area limitation
@@ -47,7 +47,7 @@ export default function ProfileSideBar() {
 
     return (
         <>
-            <div className="hidden lg:block lg:w-1/4 sticky top-0">
+            <div className="hidden lg:block">
                 <div className="border border-slate-100 py-8 px-12 text-center">
                     <div>
                         <img src={avatar} />
@@ -122,9 +122,9 @@ export default function ProfileSideBar() {
                         <TiEdit />
                     </div>
                     <p className=" cursor-pointer text-sm">Profile Text</p>
-                    {bioTextModal && (
+                    {profileTextModal && (
                         <Modal 
-                        showModal={bioTextModal}
+                        showModal={profileTextModal}
                         closeModal={handleBioTextModalClose}
                         title={'Profile Text'}
                         icon={<TiEdit />}
