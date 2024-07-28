@@ -7,6 +7,7 @@ import { store } from "./redux/store";
 import {Toaster} from 'react-hot-toast'
 import {BrowserRouter} from "react-router-dom";
 import AppRoutes from "./AppRoutes.tsx";
+import NavBar from "./components/NavBar/NavBar";
 // import axios from "axios";
 
 if (document.getElementById("app")) {
@@ -22,6 +23,7 @@ if (document.getElementById("app")) {
         <React.StrictMode>
             <Provider store={store}>
                 <BrowserRouter>
+                    <NavBar />
                     <Toaster />
                     <AppRoutes />
                 </BrowserRouter>

@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "body": "Wow, this is amazing! I've never seen anything like it before. Keep up the great work!",
+        "createdAt": "2h",
+        "user": {
+            "id": 1,
+            "name": "Alice",
+            "profileImage": "https://picsum.photos/101/101"
+        },
+        "post": {
+            "id": 1
+        }
+    },
+    {
+        "id": 2,
+        "body": "Could you please provide more details on the topic? I'm really interested in learning more about it.",
+        "createdAt": "1h",
+        "user": {
+            "id": 2,
+            "name": "Johnson",
+            "profileImage": "https://picsum.photos/101/102"
+        },
+        "post": {
+            "id": 2
+        }
+    },
+    {
+        "id": 3,
+        "body": "This was very helpful, thank you! I've been struggling with this for a while, and your explanation made it clear.",
+        "createdAt": "5h",
+        "user": {
+            "id": 3,
+            "name": "Alice Johnson",
+            "profileImage": "https://picsum.photos/101/103"
+        },
+        "post": {
+            "id": 3
+        }
+    },
+    {
+        "id": 4,
+        "body": "This was very helpful, thank you! I've been struggling with this for a while, and your explanation made it clear.",
+        "createdAt": "10h",
+        "user": {
+            "id": 4,
+            "name": "Alice Johnson",
+            "profileImage": "https://picsum.photos/101/104"
+        },
+        "post": {
+            "id": 4
+        }
+    },
+    {
+        "id": 5,
+        "body": "Great post! I appreciate the effort you put into writing this. Looking forward to your next update!",
+        "createdAt": "2h",
+        "user": {
+            "id": 5,
+            "name": "Alice Johnson",
+            "profileImage": "https://picsum.photos/101/105"
+        },
+        "post": {
+            "id": 5
+        }
+    }
+]
