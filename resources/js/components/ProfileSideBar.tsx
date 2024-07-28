@@ -37,7 +37,7 @@ export default function ProfileSideBar() {
         setProfileTextModal(false);
     }
 
-    //txt area limitation
+    //text area limitation
     const [text, setText] = useState('');
     const maxLength = 500;
 
