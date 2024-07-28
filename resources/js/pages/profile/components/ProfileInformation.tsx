@@ -6,7 +6,7 @@ import { FaRegCircleUser } from 'react-icons/fa6';
 export default function ProfileInformation() {
     const [activeBtn, setActiveBtn] = React.useState('mainInfo');
 
-    const handleActiveBtn = (section: string) => {
+    const handleActiveBtn = (section) => {
         setActiveBtn(section);
     };
 
