@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { FaGift } from 'react-icons/fa';
 import { FaRegSmile } from 'react-icons/fa';
 import { FaTelegramPlane } from 'react-icons/fa';
@@ -6,13 +6,12 @@ import { FaFlag } from 'react-icons/fa';
 import PostAllComments from './PostAllComments';
 import { RxCross2 } from 'react-icons/rx';
 import Post from '../../../../models/Post';
-
+import useInfiniteScroll from './useInfiniteScroll';
 
 
 export const PostDetails = () => {
-    // Lazy load the PostDetails component
-    const PostDetails = lazy(() => import('./PostDetails'));
 
+    
 
     //show all comments when the user clicks on the comment input
     const [showAllComment, setShowAllComment] = React.useState(false);
@@ -25,17 +24,26 @@ export const PostDetails = () => {
 
     //getting the data of posts from the Post model
     const [post, setPost] = React.useState<Post[]>([]);
+    const [page, setPage] = React.useState(1);
+    const [morePost, setMorePost] = React.useState(true);
+
     React.useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const postList = await Post.all();
-                setPost(postList);
+                const postList = await Post.all(page);
+                setPost([...post, ...postList]);
             } catch (error) {
                 console.error('Error fetching posts:', error);
             }
         };
         fetchPosts();
-    }, []);
+    }, [page]);
+
+    useInfiniteScroll(() => {
+        if (morePost) {
+            setPage(page + 1);
+        }
+    });
 
     return (
         <>
@@ -101,6 +109,7 @@ export const PostDetails = () => {
                         </div>
                     </div>
                 ))}
+                {morePost && <div id="scroll-anchor" style={{ height: '1px' }}></div>}
             </div>
 
             {showAllComment && (
