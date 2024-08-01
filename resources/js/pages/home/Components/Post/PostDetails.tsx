@@ -3,74 +3,38 @@ import { FaGift } from 'react-icons/fa';
 import { FaRegSmile } from 'react-icons/fa';
 import { FaTelegramPlane } from 'react-icons/fa';
 import { FaFlag } from 'react-icons/fa';
-import PostAllComments from './PostAllComments';
-import { RxCross2 } from 'react-icons/rx';
+
 import Post from '../../../../models/Post';
 import useInfiniteScroll from './useInfiniteScroll';
 
 
-export const PostDetails = () => {
-
-    
-
-    //show all comments when the user clicks on the comment input
-    const [showAllComment, setShowAllComment] = React.useState(false);
-    const showComment = () => {
-        setShowAllComment(true);
-    };
-    const closeComment = () => {
-        setShowAllComment(false);
-    };
-
-    //getting the data of posts from the Post model
-    const [post, setPost] = React.useState<Post[]>([]);
-    const [page, setPage] = React.useState(1);
-    const [morePost, setMorePost] = React.useState(true);
-
-    React.useEffect(() => {
-        const fetchPosts = async () => {
-            try {
-                const postList = await Post.all(page);
-                setPost([...post, ...postList]);
-            } catch (error) {
-                console.error('Error fetching posts:', error);
-            }
-        };
-        fetchPosts();
-    }, [page]);
-
-    useInfiniteScroll(() => {
-        if (morePost) {
-            setPage(page + 1);
-        }
-    });
+export const PostDetails = ({post, showComment}) => {
 
     return (
         <>
             <div>
-                {post.map((posts) => (
-                    <div className="lg:ml-5 bg-slate-50 mb-20" key={posts.id}>
+                    <div className="lg:ml-5 bg-slate-50 mb-20" key={post.id}>
                         {/* Post header */}
                         <div className="border border-slate-200 p-3 flex items-center w-full">
                             <img
-                                src={posts.user.profileImage}
+                                src={post.user.profileImage}
                                 className="rounded-full w-10 h-10 mr-3"
                             />
                             <div className="flex flex-col text-sm leading-3 w-full">
                                 <div className="flex space-x-2">
-                                    <span>{posts.user.name}</span>
+                                    <span>{post.user.name}</span>
                                     <span></span>
                                 </div>
                                 <div className="flex space-x-2 mt-1 justify-between w-full">
-                                    <span>{posts.user.location}</span>
-                                    <span>{posts.createdAt}</span>
+                                    <span>{post.user.location}</span>
+                                    <span>{post.createdAt}</span>
                                 </div>
                             </div>
                         </div>
                         {/* Post body */}
                         <div className="bg-slate-50 border border-slate-200 pt-3">
                             <img
-                                src={posts.image}
+                                src={post.image}
                                 className="h-screen w-screen"
                             />
                             <div className="mt-5 flex justify-end">
@@ -91,7 +55,7 @@ export const PostDetails = () => {
                         {/* comment section */}
                         <div className="border border-slate-200 p-3 flex items-center">
                             <img
-                                src={posts.user.profileImage}
+                                src={post.user.profileImage}
                                 className="w-7 h-7 rounded-full mr-3"
                                 alt=""
                             />
@@ -108,21 +72,10 @@ export const PostDetails = () => {
                             </div>
                         </div>
                     </div>
-                ))}
-                {morePost && <div id="scroll-anchor" style={{ height: '1px' }}></div>}
+                
             </div>
 
-            {showAllComment && (
-                <>
-                    <button
-                        className="fixed top-4 text-xl z-10 cursor-pointer"
-                        onClick={closeComment}
-                    >
-                        <RxCross2 />
-                    </button>
-                    <PostAllComments />
-                </>
-            )}
+            
         </>
     );
 };

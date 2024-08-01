@@ -7,9 +7,7 @@ import { FaHeart } from "react-icons/fa";
 import { FiSend } from "react-icons/fi";
 
 
-
-
-export const HomeStory = () => {
+export const StoryDetails = () => {
 
     //getttin the story data from the Story model
     const [userStories, setUserStories] = React.useState<Story[]>([]);
