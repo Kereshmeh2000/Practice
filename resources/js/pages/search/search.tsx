@@ -4,6 +4,7 @@ import { HiGift } from "react-icons/hi";
 import { HiEnvelope } from "react-icons/hi2";
 import { MdAddReaction, MdNotInterested } from "react-icons/md";
 import User from '../../models/User';
+import DetailedSearch from './Components/DetailedSearch';
 
 export default function Search() {
     // Tabs
@@ -61,6 +62,9 @@ export default function Search() {
                             </div>
                             ))}                            
                     </div>
+                )}
+                {activeTab === 'DETAILED SEARCH' && (
+                    <DetailedSearch />
                 )}
             </div>
         </>
