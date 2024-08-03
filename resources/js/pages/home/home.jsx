@@ -1,7 +1,7 @@
 import React from "react";
-import { StoryDetails } from "./Components/Story/StoryDetails";
-import PostDetails from "./Components/Post/PostDetails";
+import {PostDetails} from "./Components/Post/PostDetails";
 import  ProfileSideBar  from "../../components/ProfileSideBar";
+import { StoryDetails } from "./Components/Story/StoryDetails";
 
 
 export default function Home() {

@@ -4,11 +4,12 @@ import { FaRegSmile } from 'react-icons/fa';
 import { FaTelegramPlane } from 'react-icons/fa';
 import { FaFlag } from 'react-icons/fa';
 
-import Post from '../../../../models/Post';
-import useInfiniteScroll from './useInfiniteScroll';
-
 
 export const PostDetails = ({post, showComment}) => {
+
+    if (!post || !post.user) {
+        return null;  
+    } 
 
     return (
         <>
