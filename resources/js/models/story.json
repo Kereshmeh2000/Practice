@@ -5,7 +5,7 @@
         "createdAt": "Today 12:00",
         "user": {
             "name": "Alice Johnson",
-            "profileImage":  "https://picsum.photos/101/101" 
+            "image":  "https://picsum.photos/101/101" 
         }
     },
     {
@@ -14,7 +14,7 @@
         "createdAt": "Today 13:00",
         "user": {
             "name": "Bob Smith",
-            "profileImage": "https://picsum.photos/103/103" 
+            "image": "https://picsum.photos/103/103" 
         }
     },
     {
@@ -23,7 +23,7 @@
         "createdAt": "Today 14:00",
         "user": {
             "name": "Charlie Brown",
-            "profileImage": "https://picsum.photos/104/104" 
+            "image": "https://picsum.photos/104/104" 
         }
     },
     {
@@ -32,7 +32,7 @@
         "createdAt": "Today 15:00",
         "user": {
             "name": "David Wilson",
-            "profileImage": "https://picsum.photos/107/107" 
+            "image": "https://picsum.photos/107/107" 
         }
     },
     {
@@ -41,7 +41,7 @@
         "createdAt": "Today 16:00",
         "user": {
             "name": "Ella Thompson",
-            "profileImage": "https://picsum.photos/109/109"
+            "image": "https://picsum.photos/109/109"
         }
     }
 ]

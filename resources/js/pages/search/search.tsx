@@ -42,7 +42,7 @@ export default function Search() {
                     <div className='grid grid-cols-4 gap-4'>
                             {users.map (user => (
                                 <div key={user.id} className='border border-slate-200 mt-5'>
-                                <img src={user.profileImage} alt={user.name} className='w-full' />
+                                <img src={user.image} alt={user.name} className='w-full' />
                                 <div className='border-t border-slate-200'>
                                     <div className='text-center text-gray-600'>
                                         <p className='font-bold pt-2'>{user.name}</p>

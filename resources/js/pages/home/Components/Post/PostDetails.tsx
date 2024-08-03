@@ -18,7 +18,7 @@ export const PostDetails = ({post, showComment}) => {
                         {/* Post header */}
                         <div className="border border-slate-200 p-3 flex items-center w-full">
                             <img
-                                src={post.user.profileImage}
+                                src={post.user.image}
                                 className="rounded-full w-10 h-10 mr-3"
                             />
                             <div className="flex flex-col text-sm leading-3 w-full">
@@ -56,7 +56,7 @@ export const PostDetails = ({post, showComment}) => {
                         {/* comment section */}
                         <div className="border border-slate-200 p-3 flex items-center">
                             <img
-                                src={post.user.profileImage}
+                                src={post.user.image}
                                 className="w-7 h-7 rounded-full mr-3"
                                 alt=""
                             />

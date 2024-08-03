@@ -5,15 +5,15 @@ class User {
     name: string;
     gender: string;
     email: string;
-    profileImage: string;
+    image: string;
     location: string;
 
-    constructor(json: {id: number, name: string, gender: string, email: string, profileImage: string, location: string}) {
+    constructor(json: {id: number, name: string, gender: string, email: string, image: string, location: string}) {
         this.id = json.id
         this.name = json.name
         this.gender = json.gender
         this.email = json.email
-        this.profileImage = json.profileImage
+        this.image = json.image
         this.location = json.location
     }
     

@@ -19,7 +19,7 @@ export const StoryDetails = () => {
                     header: {
                         heading: story.user.name,
                         subheading: story.createdAt,
-                        profileImage: story.user.profileImage,
+                        image: story.user.image,
                     },
                 }));
                 setUserStories(formattedStories);

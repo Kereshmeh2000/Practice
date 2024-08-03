@@ -29,7 +29,7 @@ export default function StoryModal({ story, onClose }) {
                                 header: {
                                     heading: story.user.name,
                                     subheading: story.createdAt,
-                                    profileImage: story.user.profileImage,
+                                    image: story.user.image,
                                 },
                             },
                         ]}

@@ -7,7 +7,7 @@ export default function StoryItem({ story, onClick }) {
                 <div key={story.id}>
                     <img
                         className="w-14 h-14 rounded-full border-4 border-white"
-                        src={story.header.profileImage}
+                        src={story.header.image}
                         alt=""
                     />
                 </div>
