@@ -1,56 +1,53 @@
-import React from "react";
+import React from 'react';
+import { Range, getTrackBackground } from 'react-range';
 
-interface RangeSliderProps {
-    label: string;
-    min: number;
-    max: number;
-    value: number;
-    onChange: (value: number) => void;
-}
-
-const RangeSlider = ({
-    label,
-    min,
-    max,
-    value,
-    onChange,
-}: RangeSliderProps) => {
-    const getLabelWithUnit = (label: string) => {
-        if (label === "height") {
-            return "Height (cm)";
-        } else if (label === "weight") {
-            return "Weight (kg)";
-        }
-        return label;
-    };
-
-    return (
-        <div className="my-4">
-            {/* LABEL */}
-            <label className="block -mb-1 text-sm font-medium text-gray-700">
-                {getLabelWithUnit(label)}
-            </label>
-
-            {/* SHOW CURRENT VALUE */}
-            <div className="text-center text-sm -mb-1.5 font-medium text-gray-700">
-                {`${min} - ${value}`}
-            </div>
-
-            {/* SLIDER */}
-            <div className="flex items-center">
-                <span className="text-sm">{min}</span>
-                <input
-                    type="range"
-                    min={min}
-                    max={max}
-                    value={value}
-                    onChange={(e) => onChange(Number(e.target.value))}
-                    className="mx-2 flex-1 accent-[#e72a7f]"
+const RangeSlider = ({ values, setValues, min, max, step, label }) => {
+  return (
+    <div className="mt-5">
+      <p className="text-gray-500">{label}</p>
+      <div className="flex flex-col items-center mt-5">
+        <div className="w-full max-w-md">
+          <Range
+            values={values}
+            step={step}
+            min={min}
+            max={max}
+            onChange={(values) => setValues(values)}
+            renderTrack={({ props, children }) => (
+              <div
+                {...props}
+                className="relative w-full h-1 bg-gray-200 rounded"
+              >
+                <div
+                  ref={props.ref}
+                  className="absolute w-full h-full"
+                  style={{
+                    background: getTrackBackground({
+                      values,
+                      colors: ['pink', 'pink'],
+                      min,
+                      max,
+                    }),
+                  }}
                 />
-                <span className="text-sm">{max}</span>
-            </div>
+                {children}
+              </div>
+            )}
+            renderThumb={({ props }) => (
+              <div
+                {...props}
+                className="w-4 h-4 bg-pink-500 rounded-full"
+              />
+            )}
+          />
+          <div className="flex justify-between text-sm mt-2">
+            <span>{values[0]}</span>
+            <span>{values[1]}</span>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default RangeSlider;

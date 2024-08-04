@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
-import { Range, getTrackBackground } from 'react-range';
+import Slider from './Slider';
+import Dropdown from './Dropdown';
+
 
 export default function DetailedSearch() {
-    const [values, setValues] = useState([18, 99]);
+
+    //Values of the sliders
+    const [ageValues, setAgeValues] = useState([18, 99]);
+    const [highValues, setHighValues] = useState([120, 209]);
+    const [weightValues, setWeightValues] = useState([40, 150]);
+
+    //Dropdown
+
 
     return (
         <div>
             <div className='grid grid-cols-4 mt-10'>
-                <div className='col-span-1 h-72 border border-gray-200 overflow-y-auto w-full'>
+                <div className='col-span-1 h-96 border border-gray-200 overflow-y-auto w-full'>
                     <div className='p-3'>
                         <div className='flex'>
                             <button className='border border-gray-200 py-1 px-10 text-gray-500 mr-2'>
@@ -26,48 +35,37 @@ export default function DetailedSearch() {
                             />
                         </div>
                         <div className='mt-5'>
-                            <p className='text-gray-500'>Age Range</p>
                             <div className="flex flex-col items-center mt-5">
                                 <div className="w-full max-w-md">
-                                    <Range
-                                        values={values}
-                                        step={1}
+                                    <Slider
+                                        values={ageValues}
+                                        setValues={setAgeValues}
                                         min={18}
                                         max={99}
-                                        onChange={(values) => setValues(values)}
-                                        renderTrack={({ props, children }) => (
-                                            <div
-                                                {...props}
-                                                className="relative w-full h-2 bg-gray-200 rounded"
-                                            >
-                                                <div
-                                                    ref={props.ref}
-                                                    className="absolute w-full h-full"
-                                                    style={{
-                                                        background: getTrackBackground({
-                                                            values,
-                                                            colors: ['pink', 'pink'],
-                                                            min: 18,
-                                                            max: 99,
-                                                        }),
-                                                    }}
-                                                />
-                                                {children}
-                                            </div>
-                                        )}
-                                        renderThumb={({ props }) => (
-                                            <div
-                                                {...props}
-                                                className="w-6 h-6 bg-pink-500 rounded-full"
-                                            />
-                                        )}
+                                        step={1}
+                                        label='Age range'
                                     />
-                                    <div className="flex justify-between text-sm mt-2">
-                                        <span>{values[0]}</span>
-                                        <span>{values[1]}</span>
-                                    </div>
+                                    <Slider
+                                        values={highValues}
+                                        setValues={setHighValues}
+                                        min={120}
+                                        max={209}
+                                        step={1}
+                                        label='Height range'
+                                    />
+                                    <Slider
+                                        values={weightValues}
+                                        setValues={setWeightValues}
+                                        min={40}
+                                        max={150}
+                                        step={1}
+                                        label='Weight range'
+                                    />
                                 </div>
                             </div>
+                        </div>
+                        <div>
+                            <Dropdown />
                         </div>
                     </div>
                 </div>
