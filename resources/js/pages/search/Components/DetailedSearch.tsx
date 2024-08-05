@@ -15,8 +15,8 @@ export default function DetailedSearch() {
 
     return (
         <div>
-            <div className='grid grid-cols-4 mt-10'>
-                <div className='col-span-1 h-96 border border-gray-200 overflow-y-auto w-full'>
+            <div className='lg:grid lg:grid-cols-4 mt-10'>
+                <div className='hidden lg:block lg:col-span-1 h-96 border border-gray-200 overflow-y-auto w-full'>
                     <div className='p-3'>
                         <div className='flex'>
                             <button className='border border-gray-200 py-1 px-10 text-gray-500 mr-2'>
@@ -69,6 +69,9 @@ export default function DetailedSearch() {
                         </div>
                     </div>
                 </div>
+                <button className='lg:hidden w-full fixed bottom-12 py-3 border border-gray-300'>
+                    Deatailed Search
+                </button>
             </div>
         </div>
     );

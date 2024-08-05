@@ -40,9 +40,9 @@ export default function Search() {
                     <button onClick={() => handleTabChange('BORN TODAY')} className={`${activeTab === 'BORN TODAY' ? 'bg-gray-100' : 'bg-white'}`}>BORN TODAY</button>
                 </div>
                 {activeTab === 'ONLINE MEMBERS' && (
-                    <div className='grid grid-cols-4 gap-4'>
+                    <div className='lg:grid grid-cols-4 gap-4'>
                             {users.map (user => (
-                                <div key={user.id} className='border border-slate-200 mt-5'>
+                                <div key={user.id} className='border border-slate-200 mt-5 '>
                                 <img src={user.image} alt={user.name} className='w-full' />
                                 <div className='border-t border-slate-200'>
                                     <div className='text-center text-gray-600'>

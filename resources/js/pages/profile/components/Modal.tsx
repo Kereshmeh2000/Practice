@@ -6,7 +6,7 @@ interface Modal{
     closeModal: () => void;
     title: string;
     children?: React.ReactNode;
-    icon: React.ReactNode;
+    icon?: React.ReactNode;
 }
 
 export default function Modal({showModal, closeModal, title, children, icon}: Modal) {    
