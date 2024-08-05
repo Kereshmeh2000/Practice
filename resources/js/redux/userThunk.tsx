@@ -1,16 +1,18 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { customFetch } from "../utils/axios";
+import axios from "axios";
+
 
 //User Login
 export const userLogin = createAsyncThunk (
     'user/login',
     async(userInfo: {email: string, password: string}, thunkAPI) => {
         try{
-            const response = await customFetch.post ('login', userInfo);
+            const response = await axios.post ('user/login', userInfo);
             return response.data
         }
         catch (error: any){
-            return thunkAPI.rejectWithValue(error.response.data)
+            const errorMessage = error.response?.data?.message || 'An error occurred';
+            return thunkAPI.rejectWithValue(errorMessage);
         }
     }
 )
@@ -20,11 +22,12 @@ export const userRegister = createAsyncThunk (
     'user/register',
     async(userInfo: {email: string, password: string}, thunkAPI) => {
         try{
-            const response = await customFetch.post ('register', userInfo);
+            const response = await axios.post ('user/register', userInfo);
             return response.data
         }
         catch (error: any){
-            return thunkAPI.rejectWithValue(error.response.data)
+            const errorMessage = error.response?.data?.message || 'An error occurred';
+            return thunkAPI.rejectWithValue(errorMessage);
         }
     }
 )
@@ -34,11 +37,12 @@ export const userLogout = createAsyncThunk (
     'user/logout',
     async(_, thunkAPI) => {
         try{
-            const response = await customFetch.delete ('logout');
+            const response = await axios.delete ('user/logout');
             return response.data
         }
         catch (error: any){
-            return thunkAPI.rejectWithValue(error.response.data)
+            const errorMessage = error.response?.data?.message || 'An error occurred';
+            return thunkAPI.rejectWithValue(errorMessage);
         }
     }
 )

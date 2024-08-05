@@ -11,6 +11,7 @@ export default function LoginForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword]= useState("");
     const dispatch = useDispatch();
+    const {isLoading, error} = useSelector((state: any) => state.user);
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -21,7 +22,10 @@ export default function LoginForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const userInfo = {email , password};
+        const userInfo = {
+            email,
+            password
+        }
         dispatch(userLogin(userInfo));
 
         setEmail("");
@@ -55,7 +59,14 @@ export default function LoginForm() {
                     {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </div>
             </div>
-            <button type="submit" className="w-full text-black bg-gray-300 px-5 rounded py-2">Submit</button>
+            <button type="submit" disabled={isLoading} className="w-full text-black bg-gray-300 px-5 rounded py-2">
+            {isLoading ? 'Loading...' : 'Login'}
+            </button>
+            {error && (
+    <p>
+        {typeof error === 'string' ? error : error.message || 'An error occurred'}
+    </p>
+)}
         </form>
         </>
     )
