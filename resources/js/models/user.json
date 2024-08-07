@@ -5,7 +5,9 @@
       "gender": "female",
       "email": "alice.johnson@example.com",
       "image": "https://picsum.photos/101/101",
-      "location": "New York, USA"
+      "location": "New York, USA",
+      "lastSeen": "12:30 PM"
+      
     },
     {
       "id": 2,
@@ -13,7 +15,8 @@
       "gender": "male",
       "email": "bob.smith@example.com",
       "image": "https://picsum.photos/101/102",
-      "location": "Los Angeles, USA"
+      "location": "Los Angeles, USA",
+      "lastSeen": "11:30 AM"
     },
     {
       "id": 3,
@@ -21,7 +24,8 @@
       "gender": "female",
       "email": "catherine.lee@example.com",
       "image": "https://picsum.photos/101/103",
-      "location": "Chicago, USA"
+      "location": "Chicago, USA",
+      "lastSeen": "10:30 AM"
     },
     {
       "id": 4,
@@ -29,7 +33,8 @@
       "gender": "male",
       "email": "david.brown@example.com",
       "image": "https://picsum.photos/101/104",
-      "location": "Houston, USA"
+      "location": "Houston, USA",
+      "lastSeen": "9:30 AM"
     },
     {
       "id": 5,
@@ -37,6 +42,52 @@
       "gender": "female",
       "email": "eva.green@example.com",
       "image": "https://picsum.photos/101/105",
-      "location": "Phoenix, USA"
+      "location": "Phoenix, USA",
+      "lastSeen": "8:30 AM"
+    },
+    {
+      "id": 6,
+      "name": "Frank Wilson",
+      "gender": "male",
+      "email": "frank.wilson@example.com",
+      "image": "https://picsum.photos/101/106",
+      "location": "Miami, USA",
+      "lastSeen": "7:30 AM"
+    },
+    {
+      "id": 7,
+      "name": "Grace Davis",
+      "gender": "female",
+      "email": "grace.davis@example.com",
+      "image": "https://picsum.photos/101/107",
+      "location": "Seattle, USA",
+      "lastSeen": "6:30 AM"
+    },
+    {
+      "id": 8,
+      "name": "Henry Johnson",
+      "gender": "male",
+      "email": "henry.johnson@example.com",
+      "image": "https://picsum.photos/101/108",
+      "location": "San Francisco, USA",
+      "lastSeen": "5:30 AM"
+    },
+    {
+      "id": 9,
+      "name": "Isabella Martinez",
+      "gender": "female",
+      "email": "isabella.martinez@example.com",
+      "image": "https://picsum.photos/101/109",
+      "location": "Dallas, USA",
+      "lastSeen": "4:30 AM"
+    },
+    {
+      "id": 10,
+      "name": "Jack Thompson",
+      "gender": "male",
+      "email": "jack.thompson@example.com",
+      "image": "https://picsum.photos/101/110",
+      "location": "Denver, USA",
+      "lastSeen": "3:30 AM"
     }
   ]
