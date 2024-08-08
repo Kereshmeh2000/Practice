@@ -20,7 +20,7 @@ export default function DesktopNav() {
     }
 
     return (
-        <nav className="hidden lg:flex items-center justify-around bg-pink-500 text-white px-10 font-bolder">
+        <nav className="z-50 hidden lg:flex items-center justify-around bg-pink-500 text-white px-10 font-bolder">
             <div className='text-white text-4xl flex py-4'>LOGO</div>
             <div className='border-r border-l border-pink-400 py-4 px-5 flex ml-20'>ONLINE: 1254</div>
             <div className='flex'>
