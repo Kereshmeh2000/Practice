@@ -1,64 +1,65 @@
-// import React from 'react';
-// import Story from '../../../../models/Story';
-// import Stories from 'react-insta-stories';
+import React from 'react';
+import Stories from 'react-insta-stories';
+import { RxCross2 } from 'react-icons/rx';
+import { FaHeart } from 'react-icons/fa';
+import { FiSend } from 'react-icons/fi';
 
-// //The function receives an object as an argument and directly accesses its story property.
-// export default function StoryModal({story}: {story: Story}) {
+export default function StoryModal({ story, onClose }) {
+    // Heart color handler
+    const [heartColor, setHeartColor] = React.useState(false);
+    const heartColorHandler = () => {
+        setHeartColor(!heartColor);
+    };
 
-//     // const formattedStory = story.getFormattedDate();
+    return (
+        <>
+            <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
+                <div className="relative w-full h-full">
+                    <button
+                        className="absolute top-4 right-4 text-4xl text-white"
+                        onClick={onClose}
+                    >
+                        <RxCross2 />
+                    </button>
 
-//     const [stories, setStories] = React.useState<Story[]>([]);
-//     React.useEffect(() => {
-//         const fetchStories = async () => {
-//             try {
-//                 const storyList = await Story.all();
-//                 const formattedStories = storyList.map((story) => ({
-//                     url: story.image,
-//                     duration: 5000,
-//                     header: {
-//                         heading: story.user.name,
-//                         subheading: story.createdAt,
-//                     },
-//                 }));
-//                 setStories(formattedStories);
-//             } catch (error) {
-//                 console.error("Error fetching stories:", error);
-//             }
-//         };
+                    <Stories
+                        stories={[
+                            {
+                                url: story.image,
+                                header: {
+                                    heading: story.user.name,
+                                    subheading: story.createdAt,
+                                    image: story.user.image,
+                                },
+                            },
+                        ]}
+                        defaultInterval={10000}
+                        loop={false}
+                    />
 
-//         fetchStories();
-//     }
-//     , []);
-    
-//     return (
-//         <>
-//             <div className='flex flex-col'>
-//             {/* story header */}
-//             <div className='flex items-center'>
-//                 <img src={stories.image} className='w-14 h-14 rounded-full' />
-//                 <div className='ml-3'>
-//                     {/* <p className='font-bold'>{stories.user.name}</p> */}
-//                     {/* <p>{formattedStory}</p> */}
-//                 </div>
-//             </div>
-//             {/* story body */}
-//             <div>
-//                 <img src={stories.image} className='w-full' />
-//             </div>
-//             {/* story footer */}
-//             <div className='w-full flex'>
-//                 <input type="text" />
-//                 <button>Send</button>
-//             </div>
-//         </div>
-
-//         <Stories
-//                 stories={stories}
-//                 defaultInterval={1500}
-//                 width={432}
-//                 height={768}
-//                 loop={true}
-//             />
-//     </>
-
-//     )}
+                    {/* Story footer */}
+                    <div className="absolute bottom-0  p-4">
+                        <div className="flex items-center">
+                            <input
+                                type="text"
+                                className="flex-1 p-2 border border-gray-300 bg-black text-white rounded-full"
+                                placeholder="Send a message"
+                            />
+                            <button
+                                onClick={heartColorHandler}
+                                className={`ml-2 text-xl ${
+                                    heartColor ? 'text-red-500' : 'text-white'
+                                }`}
+                            >
+                                <FaHeart />
+                            </button>
+                            <button className="ml-2 text-white text-xl">
+                                <FiSend />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+}
