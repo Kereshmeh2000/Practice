@@ -1,7 +1,7 @@
 import React from "react";
-import {PostDetails} from "./Components/Post/PostDetails";
 import  ProfileSideBar  from "../../components/ProfileSideBar";
 import { StoryDetails } from "./Components/Story/StoryDetails";
+import PostFeed from "./Components/Post/PostFeed";
 
 
 export default function Home() {
@@ -11,7 +11,9 @@ export default function Home() {
             <StoryDetails />
             <div className='flex my-3 flex-col lg:flex-row'>
                 <ProfileSideBar />
-                <PostDetails />
+                <div>
+                    <PostFeed />
+                </div>
             </div>
         </div>
     </>

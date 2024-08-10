@@ -14,7 +14,7 @@ export const PostDetails = ({post, showComment}) => {
     return (
         <>
             <div>
-                    <div className="lg:ml-5 bg-slate-50 mb-20" key={post.id}>
+                    <div className="lg:ml-5 bg-slate-50 mb-20 block" key={post.id}>
                         {/* Post header */}
                         <div className="border border-slate-200 p-3 flex items-center w-full">
                             <img

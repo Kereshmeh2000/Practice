@@ -27,9 +27,9 @@ export default function StoryModal({ story, onClose }) {
                             {
                                 url: story.image,
                                 header: {
-                                    heading: story.user.name,
+                                    // heading: story.user.name,
                                     subheading: story.createdAt,
-                                    image: story.user.image,
+                                    // image: story.user.image,
                                 },
                             },
                         ]}
