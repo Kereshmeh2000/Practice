@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "conversations": "Wow, this is amazing! I've never seen anything like it before. Keep up the great work!",
+        "createdAt": "2h",
+        "user": {
+            "id": 1,
+            "name": "Alice",
+            "image": "https://picsum.photos/101/101"
+        },
+        "lastSeen": "12:30 PM",
+        "isUser": true
+    },
+    {
+        "id": 2,
+        "conversations": "Could you please provide more details on the topic? I'm really interested in learning more about it.",
+        "createdAt": "1h",
+        "user": {
+            "id": 2,
+            "name": "Johnson",
+            "image": "https://picsum.photos/101/102"
+        },
+        "lastSeen": "11:30 AM",
+        "isUser": false
+    },
+    {
+        "id": 3,
+        "conversations": "This was very helpful, thank you! I've been struggling with this for a while, and your explanation made it clear.",
+        "createdAt": "5h",
+        "user": {
+            "id": 3,
+            "name": "Alice Johnson",
+            "image": "https://picsum.photos/101/103"
+        },
+        "lastSeen": "12:30 PM",
+        "isUser": true
+    },
+    {
+        "id": 4,
+        "conversations": "This was very helpful, thank you! I've been struggling with this for a while, and your explanation made it clear.",
+        "createdAt": "10h",
+        "user": {
+            "id": 4,
+            "name": "Alice Johnson",
+            "image": "https://picsum.photos/101/104"
+        },
+        "lastSeen": "12:30 PM",
+        "isUser": false
+    },
+    {
+        "id": 5,
+        "conversations": "Great post! I appreciate the effort you put into writing this. Looking forward to your next update!",
+        "createdAt": "2h",
+        "user": {
+            "id": 5,
+            "name": "Alice Johnson",
+            "image": "https://picsum.photos/101/105"
+        },
+        "lastSeen": "12:30 PM",
+        "isUser": true
+    }
+]

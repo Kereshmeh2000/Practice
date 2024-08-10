@@ -6,11 +6,6 @@ import ChatHeader from './Components/ChatHeader';
 import ChatUserList from './Components/ChatUserList';
 
 export default function Chat() {
-    const [messages, setMessages] = React.useState([
-        { id: 1, text: 'Hi! How are you?', isUser: true },
-        { id: 2, text: "I'm good, thanks! How about you?", isUser: false },
-        { id: 3, text: "I'm great, thank you!", isUser: true },
-    ]);
     return (
         <>
             <div className="md:grid md:grid-cols-3 h-screen">

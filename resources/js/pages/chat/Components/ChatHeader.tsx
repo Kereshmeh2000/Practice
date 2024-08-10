@@ -3,6 +3,8 @@ import User from '../../../models/User';
 import { RiMenu2Fill } from "react-icons/ri";
 import ChatUserList from './ChatUserList';
 import Modal from '../../profile/components/Modal';
+import { BsThreeDotsVertical } from "react-icons/bs";
+
 
 
 export default function ChatHeader() {
@@ -32,22 +34,21 @@ export default function ChatHeader() {
 
     return (
         <>
-            <div className="fixed top-13 w-full">
+            <div className="fixed top-13 w-screen">
                 <div
                     // key={users[0].id}
                     className="border border-slate-200 bg-white p-3 flex items-center justify-between"
                 >
+                        <div className='flex items-center'>
+                            {/* <img src={users[0].image} className="rounded-full w-10 h-10 mr-3" />
+                            <p className="px-2">{users[0].name}</p> */}
+                        </div>
+                        <div>
+                            {/* <p className="text-sm text-gray-500">last seen at {users[0].lastSeen}</p> */}
+                        </div>
                     <div>
-                        <div>
-                            <RiMenu2Fill onClick={handleOpen}/>
-                            {/* <img src={users[0].image} className="rounded-full w-10 h-10 mr-3" /> */}
-                        </div>
-                        <div>
-                            {/* <p className="px-2">{users[0].name}</p>
-                            <p className="text-sm text-gray-500">last seen at {users[0].lastSeen}</p> */}
-                        </div>
+                        <BsThreeDotsVertical />
                     </div>
-                    <div>icon</div>
                 </div>
             </div>
             {userList && (
