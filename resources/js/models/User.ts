@@ -8,9 +8,8 @@ class User {
     image: string;
     location: string;
     lastSeen: string;
-    conversation: [];
 
-    constructor(json: {id: number, name: string, gender: string, email: string, image: string, location: string, lastSeen: string, conversation: []}) {
+    constructor(json: {id: number, name: string, gender: string, email: string, image: string, location: string, lastSeen: string}) {
         this.id = json.id
         this.name = json.name
         this.gender = json.gender
@@ -18,7 +17,6 @@ class User {
         this.image = json.image
         this.location = json.location
         this.lastSeen = json.lastSeen
-        this.conversation = json.conversation
     }
     
     static fromJson (json: any): User {

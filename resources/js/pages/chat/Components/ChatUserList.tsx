@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Chat from '../../../models/Chat';
 
-
-export default function ChatUserList() {
+export default function ChatUserList({ onSelectUser }) {
     const [userChat, setUserChat] = useState<Chat[]>([]);
+    
     useEffect(() => {
         const fetchUserChat = async () => {
             try {
@@ -18,18 +18,19 @@ export default function ChatUserList() {
 
     return (
         <>
-            {userChat.map((userChat) => (
+            {userChat.map((chat) => (
                 <div
-                    key={userChat.id}
+                    key={chat.id}
                     className="border border-slate-200 p-3 flex items-center hover:bg-slate-50 cursor-pointer"
+                    onClick={() => onSelectUser(chat.user)}
                 >
-                    <div key={userChat.user.id} className="flex items-center justify-between">
+                    <div className="flex items-center justify-between">
                         <div className="flex items-center">
-                            <img src={userChat.user.image} className="rounded-full w-10 h-10 mr-3" />
-                            <p className="px-2">{userChat.user.name}</p>
+                            <img src={chat.user.image} className="rounded-full w-10 h-10 mr-3" alt="User" />
+                            <p className="px-2">{chat.user.name}</p>
                         </div>
                         <div>
-                            <p className="text-sm text-gray-500">{userChat.lastSeen}</p>
+                            <p className="text-sm text-gray-500">{chat.lastSeen}</p>
                         </div>
                     </div>
                 </div>
