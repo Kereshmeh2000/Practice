@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
+import socket from '../socket';
 
-export default function ChatFooter() {
+export default function ChatFooter({ selectedUser }) {
     const [message, setMessage] = useState('');
+
+    const handleSend = () => {
+        if (message.trim() !== '') {
+            socket.emit('message', { text: message, user: selectedUser });
+            setMessage('');
+        }
+    };
     
     return (
         <div className="fixed bottom-0 bg-white p-4 flex items-center border-t border-gray-200 ">

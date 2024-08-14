@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Chat from '../../../models/Chat';
+import socket from '../socket';
 
 export default function ChatBody({ selectedUser }) {
     const [chat, setChat] = useState<Chat | null>(null);
@@ -16,6 +17,24 @@ export default function ChatBody({ selectedUser }) {
                 }
             };
             fetchChat();
+        }
+    }, [selectedUser]);
+
+    useEffect(() => {
+        if (selectedUser) {
+            // Listening for incoming messages
+            socket.on('message', (message) => {
+                if (message.user.id === selectedUser.id) {
+                    setChat(prevChat => ({
+                        ...prevChat,
+                        conversations: [...(prevChat?.conversations || []), message]
+                    }));
+                }
+            });
+
+            return () => {
+                socket.off('message');
+            };
         }
     }, [selectedUser]);
 
