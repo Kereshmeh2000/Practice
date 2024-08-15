@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import socket from '../socket';
+import socket from '../../../utils/socket';
 
 export default function ChatFooter({ selectedUser }) {
     const [message, setMessage] = useState('');

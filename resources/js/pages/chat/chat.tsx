@@ -1,5 +1,4 @@
 import React from 'react';
-import User from '../../models/User';
 import ChatFooter from './Components/ChatFooter';
 import ChatBody from './Components/ChatBody';
 import ChatHeader from './Components/ChatHeader';

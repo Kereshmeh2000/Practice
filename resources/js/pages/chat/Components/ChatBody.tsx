@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Chat from '../../../models/Chat';
-import socket from '../socket';
+import Chat from '../../../models/Messages';
+import socket from '../../../utils/socket';
 
 export default function ChatBody({ selectedUser }) {
     const [chat, setChat] = useState<Chat | null>(null);

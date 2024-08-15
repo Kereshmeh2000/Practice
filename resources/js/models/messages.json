@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "body": "Wow, this is amazing! I've never seen anything like it before. Keep up the great work!",
+        "receiver": {
+            "user": {
+                "id": 1,
+                "name": "Alice",
+                "image": "https://picsum.photos/101/101"
+            }
+        },
+        "sender": {
+            "user": {
+                "id": 2,
+                "name": "Bob",
+                "image": "https://picsum.photos/102/102"
+            }
+        }
+    },    
+    {
+        "id": 2,
+        "body": "Could you please provide more details on the topic? I'm really interested in learning more about it.",
+        "receiver": {
+            "user": {
+                "id": 1,
+                "name": "Alice",
+                "image": "https://picsum.photos/101/101"
+            }
+        },
+        "sender": {
+            "user": {
+                "id": 2,
+                "name": "Bob",
+                "image": "https://picsum.photos/102/102"
+            }
+        }
+    },
+    {
+        "id": 3,
+        "body": "This was very helpful, thank you! I've been struggling with this for a while, and your explanation made it clear.",
+        "receiver": {
+            "user": {
+                "id": 1,
+                "name": "Alice",
+                "image": "https://picsum.photos/101/101"
+            }
+        },
+        "sender": {
+            "user": {
+                "id": 2,
+                "name": "Bob",
+                "image": "https://picsum.photos/102/102"
+            }
+        }
+    },
+    {
+        "id": 4,
+        "body": "This was very helpful, thank you! I've been struggling with this for a while, and your explanation made it clear.",
+        "receiver": {
+            "user": {
+                "id": 1,
+                "name": "Alice",
+                "image": "https://picsum.photos/101/101"
+            }
+        },
+        "sender": {
+            "user": {
+                "id": 2,
+                "name": "Bob",
+                "image": "https://picsum.photos/102/102"
+            }
+        }
+    },
+    {
+        "id": 5,
+        "body": "Great post! I appreciate the effort you put into writing this. Looking forward to your next update!",
+        "receiver": {
+            "user": {
+                "id": 1,
+                "name": "Alice",
+                "image": "https://picsum.photos/101/101"
+            }
+        },
+        "sender": {
+            "user": {
+                "id": 2,
+                "name": "Bob",
+                "image": "https://picsum.photos/102/102"
+            }
+        }
+    }
+]

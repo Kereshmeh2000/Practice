@@ -1,7 +1,7 @@
 import User from "./User";
-import fakeChat from './chat.json';
+import fakeChat from './messages.json';
 
-export default class Chat {
+export default class Messages {
     id:number; 
     conversations: string;
     createdAt: string;
@@ -18,13 +18,13 @@ export default class Chat {
         this.isUser = json.isUser;
     }
 
-    static async all(): Promise<Chat[]> {
+    static async all(): Promise<Messages[]> {
         return fakeChat.map((chat) => {
-            return Chat.fromJson(chat);
+            return Messages.fromJson(chat);
         });
     }
 
-    static fromJson = (json: any): Chat => {
-        return new Chat(json);
+    static fromJson = (json: any): Messages => {
+        return new Messages(json);
     }
 }

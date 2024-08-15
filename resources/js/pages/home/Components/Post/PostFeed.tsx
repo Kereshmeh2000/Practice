@@ -18,7 +18,7 @@ export default function PostFeed () {
     };
 
     //getting the data of posts from the Post model
-    const [post, setPost] = React.useState<Post[]>([]);
+    const [posts, setPosts] = React.useState<Post[]>([]);
     const [page, setPage] = React.useState(1);
     const [morePost, setMorePost] = React.useState(true);
 
@@ -26,7 +26,7 @@ export default function PostFeed () {
         const fetchPosts = async () => {
             try {
                 const postList = await Post.all(page);
-                setPost([...post, ...postList]);
+                setPosts([...posts, ...postList]);
             } catch (error) {
                 console.error('Error fetching posts:', error);
             }
@@ -42,7 +42,7 @@ export default function PostFeed () {
 
     return (
         <>
-        {post.map((post) => (
+        {posts.map((post) => (
             <PostDetails key={post.id} post={post} showComment={showComment} />
         ))}
         {morePost && <div id="scroll-anchor" style={{ height: '1px' }}></div>}

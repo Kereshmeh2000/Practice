@@ -1,24 +1,19 @@
 import React from 'react';
 import User from '../../../models/User';
-import { RiMenu2Fill } from "react-icons/ri";
 import ChatUserList from './ChatUserList';
 import Modal from '../../profile/components/Modal';
 import { BsThreeDotsVertical } from "react-icons/bs";
 
 
 
-export default function ChatHeader() {
-    const [users, setUsers] = React.useState<User[]>([]);
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => {
-        setOpen(!open);
-    }
+export default function ChatHeader({userChat, setUserChat}) {
+
 
     React.useEffect(() => {
         const fetchUsers = async () => {
             try {
                 const userList = await User.all();
-                setUsers(userList);
+                setUserChat(userList);
             } catch (error) {
                 console.error('Error fetching users:', error);
             }

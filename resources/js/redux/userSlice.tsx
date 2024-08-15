@@ -39,8 +39,6 @@ export const userSlice = createSlice({
       state.loading = false,
       state.isAuthenticated = true,
       state.user = action.payload,
-      toast.dismiss();
-      toast.success('Login Successful')
     })
 
     //Rejected

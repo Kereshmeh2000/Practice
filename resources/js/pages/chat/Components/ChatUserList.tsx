@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import Chat from '../../../models/Chat';
+import Messages from '../../../models/Messages';
 
 export default function ChatUserList({ onSelectUser }) {
-    const [userChat, setUserChat] = useState<Chat[]>([]);
+    const [userChat, setUserChat] = useState<Messages[]>([]);
     
     useEffect(() => {
         const fetchUserChat = async () => {
             try {
-                const users = await Chat.all();
+                const users = await Messages.all();
                 setUserChat(users);
             } catch (error) {
-                console.error('Error fetching user chat:', error);
+                console.error('Error fetching user Messages:', error);
             }
         };
         fetchUserChat();
@@ -18,20 +18,15 @@ export default function ChatUserList({ onSelectUser }) {
 
     return (
         <>
-            {userChat.map((chat) => (
+            {userChat.map((message) => (
                 <div
-                    key={chat.id}
+                    key={message.receiver.id}
                     className="border border-slate-200 p-3 flex items-center hover:bg-slate-50 cursor-pointer"
-                    onClick={() => onSelectUser(chat.user)}
+                    onClick={() => onSelectUser(message.receiver.user)}
                 >
-                    <div className="flex items-center justify-between">
-                        <div className="flex items-center">
-                            <img src={chat.user.image} className="rounded-full w-10 h-10 mr-3" alt="User" />
-                            <p className="px-2">{chat.user.name}</p>
-                        </div>
-                        <div>
-                            <p className="text-sm text-gray-500">{chat.lastSeen}</p>
-                        </div>
+                    <div className="flex items-center">
+                        <img src={message.receiver.user.image} className="rounded-full w-10 h-10 mr-3" alt="User" />
+                        <p className="px-2">{message.receiver.user.name}</p>
                     </div>
                 </div>
             ))}
