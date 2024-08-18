@@ -4,7 +4,7 @@ import { FaRegCircleUser } from 'react-icons/fa6';
 import { TiEdit } from 'react-icons/ti';
 import { FiArchive } from 'react-icons/fi';
 import User from '../models/User';
-import avatar from '../../../public/assets/images/avatar.png';
+import avatar from '../../../public/assets/images/avatar.jpg';
 import Modal from '../pages/profile/components/Modal';
 import { FaPlus } from 'react-icons/fa';
 

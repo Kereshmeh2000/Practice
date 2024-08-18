@@ -1,6 +1,9 @@
-import axios from "axios";
-import { config } from "../config";
+import { default as defaultAxios } from "axios";
 
-export const customFetch = axios.create({
-    baseURL: `${config.host}/api/`,
-});
+const axios = defaultAxios;
+axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+axios.defaults.withCredentials = true;
+axios.defaults.withXSRFToken = true;
+axios.defaults.headers.common["Accept"] = "application/json";
+
+export default axios;

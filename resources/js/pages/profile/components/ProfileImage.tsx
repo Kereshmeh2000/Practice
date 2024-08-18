@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import avatar from '../../../../../public/assets/images/avatar.png';
+import avatar from '../../../../../public/assets/images/avatar.jpg';
 
 export default function ProfileImage() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);

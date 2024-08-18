@@ -2,17 +2,11 @@ import { createSlice } from '@reduxjs/toolkit'
 import { userLogin, userLogout, userRegister } from './userThunk'
 import {toast} from 'react-hot-toast'
 
-interface UserState {
-  user: any;
-  isAuthenticated: boolean;
-  loading: boolean;
-  error: string | null;
-}
 
-
-const initialState: UserState = {
+const initialState = {
   user: null,
   isAuthenticated: false,
+  token: localStorage.getItem('token') || '',
   loading: false,
   error: null,
 }
@@ -21,7 +15,11 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-
+    clearAuthState(state) {
+      state.user = null;
+      state.token = '';
+      localStorage.removeItem('token');
+  },
   },
   extraReducers : (builder) => {
 
@@ -40,9 +38,7 @@ export const userSlice = createSlice({
     .addCase(userLogin.fulfilled, (state, action) => {
       state.loading = false,
       state.isAuthenticated = true,
-      state.user = action.payload,
-      toast.dismiss();
-      toast.success('Login Successful')
+      state.user = action.payload
     })
 
     //Rejected
